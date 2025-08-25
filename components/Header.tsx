@@ -61,7 +61,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline"
-              onClick={() => window.open('https://app.getflaire.fr/login', '_blank')}
+              onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
               className="border-[#778DA9] text-[#778DA9] hover:bg-[#778DA9] hover:text-white"
             >
               Connexion
@@ -117,7 +117,7 @@ const Header = () => {
               <div className="pt-4 space-y-2">
                 <Button 
                   variant="outline"
-                  onClick={() => window.open('https://app.getflaire.fr/login', '_blank')}
+                  onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
                   className="w-full border-[#778DA9] text-[#778DA9] hover:bg-[#778DA9] hover:text-white"
                 >
                   Connexion
