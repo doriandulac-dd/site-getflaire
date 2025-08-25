@@ -246,6 +246,7 @@ const PricingSection = () => {
                     ? 'bg-[#FFB23F] hover:bg-[#FF8F00] text-white shadow-lg hover:shadow-xl'
                     : 'bg-[#1B263B] hover:bg-[#0F1419] text-white'
                 }`}
+                onClick={() => window.location.href = 'https://app.getflaire.fr/register'}
               >
                 {plan.cta}
               </Button>
