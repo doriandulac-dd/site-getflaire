@@ -20,7 +20,7 @@ const FeaturesSection = () => {
     {
       icon: Users,
       title: "CRM intégré",
-      description: "Gérez vos contacts, prospects et clients dans un seul outil centralisé et efficace."
+      description: "Gérez vos contacts, prospects et clients dans un seul outil centralisé et efficace. Notes intégrées – garde une trace claire de tes observations et échanges."
     },
     {
       icon: Calendar,
