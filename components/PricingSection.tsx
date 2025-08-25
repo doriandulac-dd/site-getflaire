@@ -8,17 +8,6 @@ const PricingSection = () => {
   const [activeTab, setActiveTab] = useState<'independent' | 'agency'>('independent');
   const [billing, setBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
 
-  const getPrice = (basePrice: number) => {
-    switch (billing) {
-      case 'quarterly':
-        return Math.round(basePrice * 0.9 * 100) / 100;
-      case 'yearly':
-        return Math.round(basePrice * 0.8 * 100) / 100;
-      default:
-        return basePrice;
-    }
-  };
-
   const getBillingLabel = () => {
     switch (billing) {
       case 'quarterly':
@@ -33,8 +22,7 @@ const PricingSection = () => {
   const independentPlans = [
     {
       name: "Starter",
-      price: getPrice(15),
-      originalPrice: 15,
+      prices: { monthly: 29, quarterly: Math.round((78 / 3) * 100) / 100, yearly: Math.round((276 / 12) * 100) / 100 },
       description: "Parfait pour débuter",
       icon: Zap,
       features: [
@@ -49,8 +37,7 @@ const PricingSection = () => {
     },
     {
       name: "Pro",
-      price: getPrice(20),
-      originalPrice: 20,
+      prices: { monthly: 29, quarterly: Math.round((78 / 3) * 100) / 100, yearly: Math.round((276 / 12) * 100) / 100 },
       description: "Le plus populaire",
       icon: Crown,
       features: [
@@ -70,8 +57,7 @@ const PricingSection = () => {
   const agencyPlans = [
     {
       name: "Équipe",
-      price: getPrice(30),
-      originalPrice: 30,
+      prices: { monthly: 79, quarterly: Math.round((213 / 3) * 100) / 100, yearly: Math.round((756 / 12) * 100) / 100 },
       description: "Pour les petites agences",
       icon: Building,
       features: [
@@ -87,8 +73,7 @@ const PricingSection = () => {
     },
     {
       name: "Enterprise",
-      price: getPrice(50),
-      originalPrice: 50,
+      prices: { monthly: 79, quarterly: Math.round((213 / 3) * 100) / 100, yearly: Math.round((756 / 12) * 100) / 100 },
       description: "Pour les grandes structures",
       icon: Crown,
       features: [
@@ -214,7 +199,7 @@ const PricingSection = () => {
                 <div className="mb-6">
                   <div className="flex items-baseline justify-center">
                     <span className="text-4xl font-bold text-[#1B263B]">
-                      {plan.price}€
+                      {plan.prices[billing]}€
                     </span>
                     <span className="text-[#778DA9] ml-1">
                       {getBillingLabel()}
@@ -222,9 +207,9 @@ const PricingSection = () => {
                   </div>
                   {billing !== 'monthly' && (
                     <div className="text-sm text-[#778DA9] mt-1">
-                      <span className="line-through">{plan.originalPrice}€/mois</span>
+                      <span className="line-through">{plan.prices.monthly}€/mois</span>
                       <span className="text-green-600 font-semibold ml-2">
-                        Économisez {((plan.originalPrice - plan.price) * (billing === 'yearly' ? 12 : 3)).toFixed(0)}€
+                        Économisez {((plan.prices.monthly - plan.prices[billing]) * (billing === 'yearly' ? 12 : 3)).toFixed(0)}€
                       </span>
                     </div>
                   )}
@@ -271,11 +256,11 @@ const PricingSection = () => {
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
                 <span className="text-[#778DA9]">Département supplémentaire</span>
-                <span className="font-semibold text-[#1B263B]">+5€/mois</span>
+                <span className="font-semibold text-[#1B263B]">+15€/mois</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
                 <span className="text-[#778DA9]">Utilisateur supplémentaire</span>
-                <span className="font-semibold text-[#1B263B]">+8€/mois</span>
+                <span className="font-semibold text-[#1B263B]">+15€/mois</span>
               </div>
             </div>
           </div>
