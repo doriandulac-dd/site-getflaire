@@ -62,7 +62,7 @@ const PricingSection = () => {
         "Rappels automatiques",
         "Support prioritaire"
       ],
-      cta: "Essayer gratuitement",
+      cta: "Essayer gratuitement 14 jours",
       popular: true
     }
   ];
@@ -82,7 +82,7 @@ const PricingSection = () => {
         "Tableau de bord partagé",
         "Formation incluse"
       ],
-      cta: "Commencer l'essai",
+      cta: "Essayer gratuitement 14 jours",
       popular: false
     },
     {

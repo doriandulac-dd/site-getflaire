@@ -24,6 +24,10 @@ const HeroSection = () => {
               <span className="block text-yellow-200">nouvelle génération</span>
             </h1>
             
+            <p className="text-2xl text-yellow-200 mb-4 font-medium">
+              Pige immobilière, alertes et CRM nouvelle génération pour agences et indépendants
+            </p>
+            
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto lg:mx-0">
               Pige, alertes, surveillance et CRM réunis dans une seule application. 
               Boostez votre prospection et signez plus de mandats.
@@ -35,7 +39,7 @@ const HeroSection = () => {
                 size="lg"
                 className="bg-white text-[#1B263B] hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
-                Commencer maintenant
+                Essayer gratuitement 14 jours
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
@@ -46,6 +50,26 @@ const HeroSection = () => {
               >
                 Voir la démo
               </Button>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-white/80">
+              <div className="flex items-center space-x-2">
+                <div className="bg-white/20 rounded-full p-2">
+                  <svg className="h-4 w-4 text-yellow-200" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="font-medium">+2000 professionnels nous font confiance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="bg-white/20 rounded-full p-2">
+                  <svg className="h-4 w-4 text-yellow-200" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="font-medium">Hébergé en France 🇫🇷</span>
+              </div>
             </div>
           </div>
 

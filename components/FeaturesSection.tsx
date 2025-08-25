@@ -88,9 +88,58 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Screenshots Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-[#1B263B] mb-4">
+              Découvrez GetFlaire en images
+            </h3>
+            <p className="text-lg text-[#778DA9]">
+              Interface intuitive et fonctionnalités puissantes pour votre prospection
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="Tableau de bord GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Tableau de bord</h4>
+              <p className="text-[#778DA9] text-sm">Vue d'ensemble de votre activité et de vos performances</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="Système d'alertes GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Alertes intelligentes</h4>
+              <p className="text-[#778DA9] text-sm">Notifications personnalisées pour ne rien manquer</p>
+            </div>
       </div>
     </section>
   );
 };
 
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="CRM intégré GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">CRM intégré</h4>
+              <p className="text-[#778DA9] text-sm">Gestion complète de vos prospects et clients</p>
+            </div>
+          </div>
+        </div>
 export default FeaturesSection;

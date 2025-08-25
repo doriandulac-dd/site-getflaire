@@ -1,146 +1,140 @@
-"use client";
+import { Search, Bell, Eye, Users, Calendar, Target } from 'lucide-react';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
-
-  const navigateToSection = (sectionId: string) => {
-    setIsMenuOpen(false);
-    
-    // Si on est déjà sur la page d'accueil, faire défiler vers la section
-    if (window.location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Sinon, naviguer vers la page d'accueil avec l'ancre
-      router.push(`/#${sectionId}`);
+const FeaturesSection = () => {
+  const features = [
+    {
+      icon: Search,
+      title: "Pige immobilière intelligente",
+      description: "Surveillez automatiquement les nouvelles annonces selon vos critères précis et géographiques."
+    },
+    {
+      icon: Bell,
+      title: "Alertes personnalisées",
+      description: "Recevez des notifications en temps réel dès qu'une nouvelle opportunité correspond à vos besoins."
+    },
+    {
+      icon: Eye,
+      title: "Surveillance concurrence",
+      description: "Analysez les stratégies et tarifs de vos concurrents pour rester compétitif sur votre marché."
+    },
+    {
+      icon: Users,
+      title: "CRM intégré",
+      description: "Gérez vos contacts, prospects et clients dans un seul outil centralisé et efficace."
+    },
+    {
+      icon: Calendar,
+      title: "Gestion des rappels",
+      description: "Planifiez et automatisez vos relances pour ne jamais manquer une opportunité commerciale."
+    },
+    {
+      icon: Target,
+      title: "Collaboration multi-utilisateurs",
+      description: "Travaillez en équipe avec des accès personnalisés et un partage d'informations fluide."
     }
-  };
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <section id="features" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <button 
-              onClick={() => router.push('/')}
-              className="text-2xl font-bold bg-gradient-to-r from-[#FFB23F] to-[#FF8F00] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            >
-              GetFlaire
-            </button>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1B263B] mb-4">
+            Toutes les fonctionnalités dont vous avez besoin
+          </h2>
+          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto">
+            GetFlaire centralise tous vos outils de prospection immobilière dans une seule plateforme intuitive et performante.
+          </p>
+        </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => navigateToSection('hero')}
-              className="text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              Accueil
-            </button>
-            <button 
-              onClick={() => navigateToSection('features')}
-              className="text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-            >
-              Fonctionnalités
-            </button>
-            <button 
-              onClick={() => navigateToSection('pricing')}
-              className="text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-            >
-              Tarifs
-            </button>
-            <button 
-              onClick={() => navigateToSection('faq')}
-              className="text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-            >
-              FAQ
-            </button>
-            <button 
-              onClick={() => router.push('/contact')}
-              className="text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-            >
-              Contact
-            </button>
-          </nav>
+              <div className="bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] rounded-2xl p-4 w-16 h-16 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="h-8 w-8 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-semibold text-[#1B263B] mb-4">
+                {feature.title}
+              </h3>
+              
+              <p className="text-[#778DA9] leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button 
-              onClick={() => navigateToSection('pricing')}
-              className="bg-[#FFB23F] hover:bg-[#FF8F00] text-white px-6 py-2 rounded-2xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              Essayer GetFlaire
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-[#1B263B] p-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+        {/* Stats Section */}
+        <div className="mt-20 bg-white rounded-3xl p-8 shadow-xl">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-[#FFB23F] mb-2">2000+</div>
+              <div className="text-[#778DA9]">Professionnels utilisent GetFlaire</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[#FFB23F] mb-2">95%</div>
+              <div className="text-[#778DA9]">Taux de satisfaction client</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[#FFB23F] mb-2">50k+</div>
+              <div className="text-[#778DA9]">Annonces analysées par jour</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[#FFB23F] mb-2">24/7</div>
+              <div className="text-[#778DA9]">Surveillance automatique</div>
+            </div>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
-            <div className="px-4 py-2 space-y-1">
-              <button 
-                onClick={() => navigateToSection('hero')}
-                className="block w-full text-left px-3 py-2 text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-              >
-                Accueil
-              </button>
-              <button 
-                onClick={() => navigateToSection('features')}
-                className="block w-full text-left px-3 py-2 text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-              >
-                Fonctionnalités
-              </button>
-              <button 
-                onClick={() => navigateToSection('pricing')}
-                className="block w-full text-left px-3 py-2 text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-              >
-                Tarifs
-              </button>
-              <button 
-                onClick={() => navigateToSection('faq')}
-                className="block w-full text-left px-3 py-2 text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-              >
-                FAQ
-              </button>
-              <button 
-                onClick={() => router.push('/contact')}
-                className="block w-full text-left px-3 py-2 text-[#1B263B] hover:text-[#FFB23F] transition-colors font-medium"
-              >
-                Contact
-              </button>
-              <div className="px-3 py-2">
-                <Button 
-                  onClick={() => navigateToSection('pricing')}
-                  className="w-full bg-[#FFB23F] hover:bg-[#FF8F00] text-white px-6 py-2 rounded-2xl font-medium transition-all duration-200"
-                >
-                  Essayer GetFlaire
-                </Button>
-              </div>
-            </div>
+        {/* Screenshots Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-[#1B263B] mb-4">
+              Découvrez l'interface GetFlaire
+            </h3>
+            <p className="text-lg text-[#778DA9]">
+              Une plateforme intuitive conçue pour les professionnels de l'immobilier
+            </p>
           </div>
-        )}
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="Tableau de bord GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Tableau de bord</h4>
+              <p className="text-[#778DA9] text-sm">Vue d'ensemble de votre activité et de vos performances</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="Pige immobilière GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Pige immobilière</h4>
+              <p className="text-[#778DA9] text-sm">Surveillance automatique des nouvelles annonces</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
+                <img 
+                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  alt="Alertes GetFlaire" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
       </div>
-    </header>
+    </section>
   );
 };
 
-export default Header;
+export default FeaturesSection;

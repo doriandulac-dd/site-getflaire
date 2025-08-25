@@ -12,12 +12,20 @@ const FAQSection = () => {
       answer: "Oui, vous pouvez annuler votre abonnement à tout moment sans frais ni pénalités. Votre accès restera actif jusqu'à la fin de votre période de facturation en cours."
     },
     {
+      question: "Comment mes données sont-elles protégées ?",
+      answer: "Vos données sont hébergées en France avec un chiffrement SSL 256 bits. Nous sommes conformes au RGPD et ne partageons jamais vos données avec des tiers. Vous gardez le contrôle total sur vos informations."
+    },
+    {
       question: "Mes données sont-elles sécurisées ?",
       answer: "Absolument. Nous utilisons un chiffrement de niveau bancaire (SSL 256 bits) et nos serveurs sont hébergés en France avec certification ISO 27001. Vos données ne sont jamais partagées avec des tiers."
     },
     {
       question: "Existe-t-il une période d'essai gratuite ?",
-      answer: "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans Pro et Équipe, sans obligation d'engagement. Aucune carte bancaire n'est requise pour commencer."
+      answer: "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans, sans obligation d'engagement. Aucune carte bancaire n'est requise pour commencer."
+    },
+    {
+      question: "Comment résilier facilement mon abonnement ?",
+      answer: "Très simple ! Vous pouvez annuler directement depuis votre espace client en un clic, ou nous envoyer un email. Aucune justification n'est demandée et votre service reste actif jusqu'à la fin de votre période payée."
     },
     {
       question: "Combien de départements puis-je surveiller ?",
