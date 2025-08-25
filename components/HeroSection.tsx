@@ -20,7 +20,7 @@ const HeroSection = () => {
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              GetFlaire — La pige immobilière 
+              GetFlaire - La pige immobilière 
               <span className="block text-yellow-200">nouvelle génération</span>
             </h1>
             
