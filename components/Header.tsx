@@ -23,9 +23,13 @@ const Header = () => {
           <div className="flex-shrink-0">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold bg-gradient-to-r from-[#FFB23F] to-[#FF8F00] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity"
             >
-              GetFlaire
+              <img 
+                src="/GetFlaire logo long hd 2000*500-min.png" 
+                alt="Logo GetFlaire" 
+                className="h-8 w-auto"
+              />
             </button>
           </div>
 
