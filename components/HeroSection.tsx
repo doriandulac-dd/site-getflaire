@@ -1,50 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart3, Bell, Users, Calendar, Target, Shield } from 'lucide-react';
-import CustomBackgroundShapes from './CustomBackgroundShapes';
 
 const HeroSection = () => {
-  const backgroundShapes = [
-    {
-      type: "rocket" as const,
-      style: "outline" as const,
-      strokeColor: "#FFFFFF",
-      strokeWidth: 2,
-      position: {
-        x: 200,
-        y: 100
-      },
-      size: {
-        width: 200,
-        height: 400
-      }
-    },
-    {
-      type: "pawn" as const,
-      style: "outline" as const,
-      strokeColor: "#FFFFFF",
-      strokeWidth: 2,
-      position: {
-        x: 500,
-        y: 500
-      },
-      size: {
-        width: 120,
-        height: 160
-      }
-    },
-    {
-      type: "smoke" as const,
-      style: "outline" as const,
-      strokeColor: "#FFFFFF",
-      strokeWidth: 2,
-      curves: [
-        { cx: 150, cy: 600, r: 80 },
-        { cx: 250, cy: 650, r: 100 },
-        { cx: 350, cy: 620, r: 90 }
-      ]
-    }
-  ];
-
   const scrollToPricing = () => {
     const element = document.getElementById('pricing');
     if (element) {
@@ -55,9 +12,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative pt-16 min-h-screen flex items-center">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFB23F] via-[#FF8F00] to-[#1B263B] opacity-90">
-        <CustomBackgroundShapes elements={backgroundShapes} />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FFB23F] via-[#FF8F00] to-[#1B263B] opacity-90"></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
