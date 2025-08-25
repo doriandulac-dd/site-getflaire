@@ -132,6 +132,12 @@ const FeaturesSection = () => {
                   alt="Alertes GetFlaire" 
                   className="w-full h-full object-cover rounded-xl"
                 />
+              </div>
+              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Alertes</h4>
+              <p className="text-[#778DA9] text-sm">Notifications en temps réel</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

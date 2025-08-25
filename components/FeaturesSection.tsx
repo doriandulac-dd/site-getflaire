@@ -124,10 +124,6 @@ const FeaturesSection = () => {
               <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Alertes intelligentes</h4>
               <p className="text-[#778DA9] text-sm">Notifications personnalisées pour ne rien manquer</p>
             </div>
-      </div>
-    </section>
-  );
-};
 
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
@@ -142,4 +138,9 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+};
+
 export default FeaturesSection;
