@@ -78,10 +78,9 @@ export default function PolitiqueConfidentialite() {
                 </p>
                 <div className="bg-white rounded-xl p-6 border-l-4 border-[#FFB23F]">
                   <p><strong className="text-[#1B263B]">GetFlaire SAS</strong><br />
-                  123 Avenue des Champs-Élysées<br />
-                  75008 Paris, France<br />
-                  <strong className="text-[#1B263B]">Email :</strong> dpo@getflaire.fr<br />
-                  <strong className="text-[#1B263B]">Téléphone :</strong> +33 1 23 45 67 89</p>
+                  GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers<br />
+                  <strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr<br />
+                  
                 </div>
               </div>
             </div>
@@ -312,8 +311,8 @@ export default function PolitiqueConfidentialite() {
                     Pour exercer vos droits, contactez notre Délégué à la Protection des Données :
                   </p>
                   <div className="space-y-2 text-sm">
-                    <p><strong>Email :</strong> dpo@getflaire.fr</p>
-                    <p><strong>Courrier :</strong> GetFlaire SAS - DPO, 123 Avenue des Champs-Élysées, 75008 Paris</p>
+                    <p><strong>Email :</strong> hello@getflaire.fr</p>
+                    <p><strong>Courrier :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
                   </div>
                   <p className="text-xs text-white/70 mt-4">
                     Nous nous engageons à répondre dans un délai maximum de 30 jours.
@@ -373,8 +372,8 @@ export default function PolitiqueConfidentialite() {
                     <div>
                       <h4 className="font-semibold mb-3">Délégué à la Protection des Données</h4>
                       <div className="space-y-2 text-sm text-white/90">
-                        <p><strong>Email :</strong> dpo@getflaire.fr</p>
-                        <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                        <p><strong>Email :</strong> hello@getflaire.fr</p>
+                        
                       </div>
                     </div>
                     
