@@ -45,7 +45,7 @@ export default function Conditions() {
             <div className="bg-[#FFB23F]/10 border-l-4 border-[#FFB23F] rounded-r-2xl p-6">
               <p className="text-[#1B263B] font-medium mb-2">Important</p>
               <p className="text-[#778DA9]">
-                En utilisant les services GetFlaire, vous acceptez les présentes conditions générales d&apos;utilisation.
+                Le support client est disponible par email à hello@getflaire.fr avec un temps de réponse moyen de 2 heures en jours ouvrés.
               </p>
             </div>
 
@@ -240,7 +240,7 @@ export default function Conditions() {
                 <div className="bg-white/10 rounded-xl p-6 mt-6">
                   <h4 className="font-semibold mb-3">Contact</h4>
                   <div className="space-y-2 text-sm text-white/90">
-                    <p><strong>Email :</strong> support@getflaire.fr</p>
+                    <p><strong>Email :</strong> hello@getflaire.fr</p>
                     <p><strong>Adresse :</strong> GetFlaire SAS, 10 rue Exemple, 10000 Troyes, France</p>
                   </div>
                 </div>

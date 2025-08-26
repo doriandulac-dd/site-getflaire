@@ -110,7 +110,7 @@ export default function Annulation() {
                     Si vous ne pouvez pas accéder à votre espace client, envoyez un email à :
                   </p>
                   <p className="text-sm">
-                    <strong>Email :</strong> support@getflaire.fr<br />
+                    <strong>Email :</strong> hello@getflaire.fr<br />
                     <strong>Objet :</strong> Demande d&apos;annulation - [Votre nom]<br />
                     <strong>Contenu :</strong> Nom, email du compte, motif (optionnel)
                   </p>
@@ -230,7 +230,7 @@ export default function Annulation() {
                     <div>
                       <h4 className="font-semibold mb-3">Contact support</h4>
                       <div className="space-y-2 text-sm text-white/90">
-                        <p><strong>Email :</strong> support@getflaire.fr</p>
+                        <p><strong>Email :</strong> hello@getflaire.fr</p>
                         <p><strong>Réponse :</strong> Sous 2h en moyenne</p>
                       </div>
                     </div>

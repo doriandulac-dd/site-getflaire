@@ -67,7 +67,7 @@ export default function Confidentialite() {
                 Le responsable du traitement de vos données personnelles est GetFlaire SAS, société par actions simplifiée au capital de 50 000 €, dont le siège social est situé 10 rue Exemple, 10000 Troyes, France.
               </p>
               <p className="text-white/90">
-                <strong>Contact :</strong> support@getflaire.fr
+                <strong>Contact :</strong> hello@getflaire.fr
               </p>
             </div>
 
@@ -221,7 +221,7 @@ export default function Confidentialite() {
                 <div className="bg-white/10 rounded-xl p-6 mt-6">
                   <h4 className="font-semibold mb-3">Comment exercer vos droits ?</h4>
                   <p className="text-sm text-white/90 mb-4">
-                    Pour exercer vos droits, contactez-nous à : <strong>support@getflaire.fr</strong>
+                    Pour exercer vos droits, contactez-nous à : <strong>hello@getflaire.fr</strong>
                   </p>
                   <p className="text-xs text-white/70">
                     Nous nous engageons à répondre dans un délai maximum de 30 jours.
@@ -263,7 +263,7 @@ export default function Confidentialite() {
                 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="space-y-2 text-sm text-white/90">
-                    <p><strong>Email :</strong> support@getflaire.fr</p>
+                    <p><strong>Email :</strong> hello@getflaire.fr</p>
                     <p><strong>Adresse :</strong> GetFlaire SAS, 10 rue Exemple, 10000 Troyes, France</p>
                   </div>
                   

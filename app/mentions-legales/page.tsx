@@ -58,7 +58,7 @@ export default function MentionsLegales() {
                 10000 Troyes<br />
                 France</p>
                 <p className="mt-4">
-                  <strong className="text-[#1B263B]">Email :</strong> support@getflaire.fr
+                  <strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function MentionsLegales() {
               <div className="text-[#778DA9]">
                 <p><strong className="text-[#1B263B]">Nom :</strong> Dorian Dulac</p>
                 <p><strong className="text-[#1B263B]">Qualité :</strong> Président de GetFlaire SAS</p>
-                <p><strong className="text-[#1B263B]">Email :</strong> support@getflaire.fr</p>
+                <p><strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr</p>
               </div>
             </div>
 
@@ -108,7 +108,7 @@ export default function MentionsLegales() {
                   Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition aux données personnelles vous concernant.
                 </p>
                 <p>
-                  Pour exercer ces droits, vous pouvez nous contacter à l&apos;adresse : <a href="mailto:support@getflaire.fr" className="text-[#FFB23F] hover:underline">support@getflaire.fr</a>
+                  Pour exercer ces droits, vous pouvez nous contacter à l&apos;adresse : <a href="mailto:hello@getflaire.fr" className="text-[#FFB23F] hover:underline">hello@getflaire.fr</a>
                 </p>
                 <p>
                   Pour plus d&apos;informations sur le traitement de vos données personnelles, consultez notre <a href="/confidentialite" className="text-[#FFB23F] hover:underline">Politique de confidentialité</a>.
