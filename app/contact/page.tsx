@@ -98,7 +98,7 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-[#1B263B] mb-2">Adresse postale</h3>
                     <p className="text-[#778DA9]">
-                      GetFlaire SAS<br />
+                      GetFlaire<br />
                       11 rue de la fontaine nagot<br />
                       10120 Saint-André-les-Vergers<br />
                       France
