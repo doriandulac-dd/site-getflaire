@@ -17,7 +17,7 @@ const FAQSection = () => {
   },
   {
     "question": "Existe-t-il une période d'essai gratuite ?",
-    "answer": "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans, sans obligation d'engagement. Aucune carte bancaire n'est requise pour commencer."
+    "answer": "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans. Une carte bancaire est requise pour activer l'essai, mais vous ne serez pas facturé avant la fin de la période gratuite."
   },
   {
     "question": "Comment résilier facilement mon abonnement ?",
