@@ -26,7 +26,7 @@ Message:
 ${formData.message}
     `);
     
-    window.location.href = `mailto:support@getflaire.fr?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@getflaire.fr?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -83,10 +83,10 @@ ${formData.message}
                       Pour toute question technique, facturation ou assistance
                     </p>
                     <a 
-                      href="mailto:support@getflaire.fr" 
+                      href="mailto:hello@getflaire.fr" 
                       className="text-[#FFB23F] hover:text-[#FF8F00] font-medium transition-colors"
                     >
-                      support@getflaire.fr
+                      hello@getflaire.fr
                     </a>
                   </div>
                 </div>
