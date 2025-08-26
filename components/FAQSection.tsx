@@ -7,35 +7,31 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
-    {
-      question: "Puis-je résilier mon abonnement à tout moment ?",
-      answer: "Oui, vous pouvez annuler votre abonnement à tout moment sans frais ni pénalités. Votre accès restera actif jusqu'à la fin de votre période de facturation en cours."
-    },
-    {
-      question: "Comment mes données sont-elles protégées ?",
-      answer: "Vos données sont hébergées en France avec un chiffrement SSL 256 bits. Nous sommes conformes au RGPD et ne partageons jamais vos données avec des tiers. Vous gardez le contrôle total sur vos informations."
-    },
-    {
-      question: "Mes données sont-elles sécurisées ?",
-      answer: "Absolument. Nous utilisons un chiffrement de niveau bancaire (SSL 256 bits) et nos serveurs sont hébergés en France avec certification ISO 27001. Vos données ne sont jamais partagées avec des tiers."
-    },
-    {
-      question: "Existe-t-il une période d'essai gratuite ?",
-      answer: "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans, sans obligation d'engagement. Aucune carte bancaire n'est requise pour commencer."
-    },
-    {
-      question: "Comment résilier facilement mon abonnement ?",
-      answer: "Très simple ! Vous pouvez annuler directement depuis votre espace client en un clic, ou nous envoyer un email. Aucune justification n'est demandée et votre service reste actif jusqu'à la fin de votre période payée."
-    },
-    {
-      question: "Combien de départements puis-je surveiller ?",
-      answer: "Cela dépend de votre formule : le plan Starter inclut 1 département, Pro inclut 3 départements, Équipe inclut 5 départements. Vous pouvez ajouter des départements supplémentaires à 5€/mois chacun."
-    },
-    {
-      question: "GetFlaire s'intègre-t-il avec d'autres logiciels ?",
-      answer: "Oui, nous proposons des intégrations avec les principaux CRM immobiliers (Hektor, Immowork, etc.) et les logiciels de transaction. Une API est disponible pour les intégrations personnalisées sur les plans Enterprise."
-    }
-  ];
+  {
+    "question": "Puis-je résilier mon abonnement à tout moment ?",
+    "answer": "Oui, vous pouvez annuler votre abonnement à tout moment sans frais ni pénalités. Votre accès reste actif jusqu'à la fin de votre période de facturation en cours."
+  },
+  {
+    "question": "Comment mes données sont-elles protégées ?",
+    "answer": "Vos données sont hébergées en France avec un chiffrement SSL 256 bits. Nous sommes conformes au RGPD et ne partageons jamais vos informations avec des tiers."
+  },
+  {
+    "question": "Existe-t-il une période d'essai gratuite ?",
+    "answer": "Oui, nous proposons 14 jours d'essai gratuit sur tous nos plans, sans obligation d'engagement. Aucune carte bancaire n'est requise pour commencer."
+  },
+  {
+    "question": "Comment résilier facilement mon abonnement ?",
+    "answer": "Très simple ! Vous pouvez annuler directement depuis votre espace client en un clic, ou nous envoyer un email. Votre service reste actif jusqu'à la fin de la période déjà payée."
+  },
+  {
+    "question": "Combien de départements puis-je surveiller ?",
+    "answer": "Cela dépend de votre formule : Indépendant inclut 1 département, Agence inclut 1 département avec 3 collaborateurs. Vous pouvez ajouter des départements supplémentaires pour 5€/mois chacun."
+  },
+  {
+    "question": "GetFlaire fonctionne-t-il avec d'autres logiciels ?",
+    "answer": "Non, GetFlaire est une solution autonome conçue pour centraliser vos besoins sans dépendre d'autres logiciels."
+  }
+];
 
   return (
     <section id="faq" className="py-20 bg-white">
