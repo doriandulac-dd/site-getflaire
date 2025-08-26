@@ -49,6 +49,20 @@ const PricingSection = () => {
 
   const currentPlans = activeTab === 'independent' ? independentPlans : agencyPlans;
 
+  // Calculate dynamic pricing for additional options
+  const getAdditionalOptionPrice = () => {
+    switch (billing) {
+      case 'quarterly':
+        return { price: 45, period: '/trimestre' }; // 15 * 3
+      case 'yearly':
+        return { price: 180, period: '/an' }; // 15 * 12
+      default:
+        return { price: 15, period: '/mois' };
+    }
+  };
+
+  const additionalOption = getAdditionalOptionPrice();
+
   return (
     <section id="pricing" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -243,12 +257,14 @@ const PricingSection = () => {
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
                 <span className="text-[#778DA9]">Département supplémentaire</span>
-                <span className="font-semibold text-[#1B263B]">+15€/mois</span>
+                <span className="font-semibold text-[#1B263B]">+{additionalOption.price}€{additionalOption.period}</span>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                <span className="text-[#778DA9]">Utilisateur supplémentaire</span>
-                <span className="font-semibold text-[#1B263B]">+15€/mois</span>
-              </div>
+              {activeTab === 'agency' && (
+                <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
+                  <span className="text-[#778DA9]">Utilisateur supplémentaire</span>
+                  <span className="font-semibold text-[#1B263B]">+{additionalOption.price}€{additionalOption.period}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
