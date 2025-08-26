@@ -40,6 +40,14 @@ const CTASection = () => {
             Créer mon compte GetFlaire
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
+          
+          <Button 
+            variant="outline"
+            size="lg"
+            className="border-2 border-white text-white hover:bg-white hover:text-[#1B263B] px-8 py-4 rounded-2xl font-semibold transition-all duration-200"
+          >
+            Demander une démo
+          </Button>
         </div>
 
         {/* Trust indicators */}
