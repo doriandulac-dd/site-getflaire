@@ -25,7 +25,7 @@ const FAQSection = () => {
   },
   {
     "question": "Combien de départements puis-je surveiller ?",
-    "answer": "Cela dépend de votre formule : Indépendant inclut 1 département, Agence inclut 1 département avec 3 collaborateurs. Vous pouvez ajouter des départements supplémentaires pour 5€/mois chacun."
+    "answer": "Cela dépend de votre formule : Indépendant inclut 1 département, Agence inclut 1 département avec 3 collaborateurs. Vous pouvez ajouter des départements supplémentaires."
   },
   {
     "question": "GetFlaire fonctionne-t-il avec d'autres logiciels ?",
