@@ -54,7 +54,7 @@ const Header = () => {
               FAQ
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.location.href = '/contact'}
               className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Contact
@@ -112,7 +112,7 @@ const Header = () => {
                 FAQ
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.location.href = '/contact'}
                 className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
               >
                 Contact
