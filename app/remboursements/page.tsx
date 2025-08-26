@@ -152,7 +152,7 @@ export default function Remboursements() {
 
                 <h3 className="text-lg font-semibold text-[#1B263B]">4.2 Demande écrite</h3>
                 <p>
-                  Les demandes de remboursement doivent être adressées par email à <strong>support@getflaire.fr</strong> 
+                  Les demandes de remboursement doivent être adressées par email à <strong>hello@getflaire.fr</strong> 
                   en précisant :
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
@@ -216,7 +216,7 @@ export default function Remboursements() {
                 
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="space-y-2 text-sm text-white/90">
-                    <p><strong>Email :</strong> support@getflaire.fr</p>
+                    <p><strong>Email :</strong> hello@getflaire.fr</p>
                     <p><strong>Objet :</strong> Demande de remboursement - [Votre nom]</p>
                     <p><strong>Horaires :</strong> Lundi - Vendredi, 9h00 - 18h00</p>
                     <p><strong>Temps de réponse :</strong> 2h en moyenne</p>
