@@ -21,8 +21,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button 
-              onClick={() => scrollToSection('hero')}
+            <a 
+              href="/"
               className="hover:opacity-80 transition-opacity"
             >
               <img 
@@ -30,7 +30,7 @@ const Header = () => {
                 alt="Logo GetFlaire" 
                 className="h-8 w-auto"
               />
-            </button>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
