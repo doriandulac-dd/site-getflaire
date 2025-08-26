@@ -263,7 +263,7 @@ export default function Confidentialite() {
                 <div className="bg-white/10 rounded-xl p-6">
                   <div className="space-y-2 text-sm text-white/90">
                     <p><strong>Email :</strong> hello@getflaire.fr</p>
-                    <p><strong>Adresse :</strong> GetFlaire SAS, 10 rue Exemple, 10000 Troyes, France</p>
+                    <p><strong>Adresse :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
                   </div>
                   
                   <div className="mt-4 pt-4 border-t border-white/20">
