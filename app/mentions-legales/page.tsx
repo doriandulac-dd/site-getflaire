@@ -40,7 +40,7 @@ export default function MentionsLegales() {
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">Éditeur du site</h2>
               
               <div className="space-y-4 text-[#778DA9]">
-                <p><strong className="text-[#1B263B]">Raison sociale :</strong> GetFlaire SAS</p>
+                <p><strong className="text-[#1B263B]">Raison sociale :</strong> GetFlaire</p>
                 <p><strong className="text-[#1B263B]">Forme juridique :</strong> Société par Actions Simplifiée</p>
                 <p><strong className="text-[#1B263B]">Capital social :</strong> 50 000 €</p>
                 <p><strong className="text-[#1B263B]">SIREN :</strong> 000 000 000</p>
@@ -53,7 +53,7 @@ export default function MentionsLegales() {
             <div className="bg-gray-50 rounded-2xl p-8">
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">Siège social</h2>
               <div className="text-[#778DA9]">
-                <p>GetFlaire SAS<br />
+                <p>GetFlaire<br />
                 11 rue de la fontaine nagot<br />
                 10120 Saint-André-les-Vergers<br />
                 France</p>
@@ -67,7 +67,7 @@ export default function MentionsLegales() {
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">Directeur de la publication</h2>
               <div className="text-[#778DA9]">
                 <p><strong className="text-[#1B263B]">Nom :</strong> Dorian Dulac</p>
-                <p><strong className="text-[#1B263B]">Qualité :</strong> Président de GetFlaire SAS</p>
+                <p><strong className="text-[#1B263B]">Qualité :</strong> Président de GetFlaire</p>
                 <p><strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr</p>
               </div>
             </div>
