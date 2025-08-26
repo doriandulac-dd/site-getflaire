@@ -129,7 +129,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
+                <a href="/rgpd" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
                   RGPD
                 </a>
               </li>
