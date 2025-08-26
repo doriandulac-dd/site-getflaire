@@ -35,7 +35,7 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                onClick={scrollToPricing}
+                onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
                 size="lg"
                 className="bg-white text-[#1B263B] hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
