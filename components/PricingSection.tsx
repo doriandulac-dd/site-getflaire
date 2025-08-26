@@ -140,7 +140,7 @@ const PricingSection = () => {
           {currentPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 ${
+              className={`relative bg-white rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 ${
                 plan.popular ? 'ring-4 ring-[#FFB23F] ring-opacity-50' : ''
               }`}
             >
@@ -152,7 +152,7 @@ const PricingSection = () => {
                 </div>
               )}
 
-              <div className="text-center mb-8">
+              <div className="text-center mb-6">
                 <div className={`bg-gradient-to-br ${plan.popular ? 'from-[#FFB23F] to-[#FF8F00]' : 'from-[#778DA9] to-[#1B263B]'} rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4`}>
                   <plan.icon className="h-8 w-8 text-white" />
                 </div>
@@ -185,7 +185,7 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <Check className="h-5 w-5 text-[#FFB23F] mt-0.5 mr-3 flex-shrink-0" />
@@ -218,7 +218,7 @@ const PricingSection = () => {
 
         {/* Additional Options */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-3xl p-8 shadow-xl max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl p-6 shadow-xl max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold text-[#1B263B] mb-4">
               Options supplémentaires
             </h3>
