@@ -207,7 +207,7 @@ export default function CGU() {
               </p>
               <div className="space-y-2">
                 <p><strong>Email :</strong> hello@getflaire.fr</p>
-                <p><strong>Adresse :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
+                <p><strong>Adresse :</strong> GetFlaire SAS, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
                 
               </div>
             </div>

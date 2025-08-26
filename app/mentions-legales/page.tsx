@@ -54,8 +54,8 @@ export default function MentionsLegales() {
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">Siège social</h2>
               <div className="text-[#778DA9]">
                 <p>GetFlaire SAS<br />
-                10 rue Exemple<br />
-                10000 Troyes<br />
+                11 rue de la fontaine nagot<br />
+                10120 Saint-André-les-Vergers<br />
                 France</p>
                 <p className="mt-4">
                   <strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr
