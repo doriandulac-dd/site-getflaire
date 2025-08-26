@@ -64,8 +64,7 @@ export default function Confidentialite() {
             <div className="bg-[#1B263B] text-white rounded-2xl p-8">
               <h2 className="text-2xl font-semibold mb-6">Responsable du traitement</h2>
               <p className="text-white/90 mb-4">
-                Le responsable du traitement de vos données personnelles est GetFlaire SAS, société par actions simplifiée au capital de 50 000 €, dont le siège social est situé 10 rue Exemple, 10000 Troyes, France.
-              </p>
+                Le responsable du traitement de vos données personnelles est GetFlaire, dont le siège social est situé 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
               <p className="text-white/90">
                 <strong>Contact :</strong> hello@getflaire.fr
               </p>
