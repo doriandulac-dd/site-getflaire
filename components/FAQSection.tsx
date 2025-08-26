@@ -91,8 +91,7 @@ const FAQSection = () => {
           </p>
           <button 
             onClick={() => {
-              const element = window.location.href = '/contact';
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
+              window.location.href = '/contact';
             }}
             className="bg-[#FFB23F] hover:bg-[#FF8F00] text-white px-8 py-3 rounded-2xl font-semibold transition-colors shadow-lg hover:shadow-xl"
           >
