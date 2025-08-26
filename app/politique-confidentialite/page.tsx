@@ -77,7 +77,7 @@ export default function PolitiqueConfidentialite() {
                   Le responsable du traitement de vos données personnelles est :
                 </p>
                 <div className="bg-white rounded-xl p-6 border-l-4 border-[#FFB23F]">
-                  <p><strong className="text-[#1B263B]">GetFlaire SAS</strong><br />
+                  <p><strong className="text-[#1B263B]">GetFlaire</strong><br />
                   11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers<br />
                   <strong className="text-[#1B263B]">Email :</strong> hello@getflaire.fr<br />
                   
@@ -312,7 +312,7 @@ export default function PolitiqueConfidentialite() {
                   </p>
                   <div className="space-y-2 text-sm">
                     <p><strong>Email :</strong> hello@getflaire.fr</p>
-                    <p><strong>Courrier :</strong> GetFlaire SAS, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
+                    <p><strong>Courrier :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
                   </div>
                   <p className="text-xs text-white/70 mt-4">
                     Nous nous engageons à répondre dans un délai maximum de 30 jours.
