@@ -395,3 +395,5 @@ export default function PolitiqueConfidentialite() {
       <Footer />
     </main>
   );
+  )
+}
