@@ -241,7 +241,7 @@ export default function Conditions() {
                   <h4 className="font-semibold mb-3">Contact</h4>
                   <div className="space-y-2 text-sm text-white/90">
                     <p><strong>Email :</strong> hello@getflaire.fr</p>
-                    <p><strong>Adresse :</strong> GetFlaire SAS, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers, France</p>
+                    <p><strong>Adresse :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers, France</p>
                   </div>
                 </div>
               </div>
