@@ -94,11 +94,6 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Support & Légal</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:support@getflaire.fr" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
                 <a href="/mentions-legales" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
                   Mentions légales
                 </a>
