@@ -21,21 +21,6 @@ const PricingSection = () => {
 
   const independentPlans = [
     {
-      name: "Starter",
-      prices: { monthly: 29, quarterly: Math.round((78 / 3) * 100) / 100, yearly: Math.round((276 / 12) * 100) / 100 },
-      description: "Parfait pour débuter",
-      icon: Zap,
-      features: [
-        "1 département inclus",
-        "Pige immobilière de base",
-        "5 alertes personnalisées",
-        "CRM simplifié",
-        "Support email"
-      ],
-      cta: "Commencer",
-      popular: false
-    },
-    {
       name: "Pro",
       prices: { monthly: 29, quarterly: Math.round((78 / 3) * 100) / 100, yearly: Math.round((276 / 12) * 100) / 100 },
       description: "Le plus populaire",
@@ -55,22 +40,6 @@ const PricingSection = () => {
   ];
 
   const agencyPlans = [
-    {
-      name: "Équipe",
-      prices: { monthly: 79, quarterly: Math.round((213 / 3) * 100) / 100, yearly: Math.round((756 / 12) * 100) / 100 },
-      description: "Pour les petites agences",
-      icon: Building,
-      features: [
-        "3 utilisateurs inclus",
-        "5 départements inclus",
-        "Toutes les fonctionnalités Pro",
-        "Collaboration en équipe",
-        "Tableau de bord partagé",
-        "Formation incluse"
-      ],
-      cta: "Essayer gratuitement 14 jours",
-      popular: false
-    },
     {
       name: "Enterprise",
       prices: { monthly: 79, quarterly: Math.round((213 / 3) * 100) / 100, yearly: Math.round((756 / 12) * 100) / 100 },
@@ -167,7 +136,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
           {currentPlans.map((plan, index) => (
             <div
               key={index}
