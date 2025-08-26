@@ -52,7 +52,7 @@ export default function CGU() {
                   service SaaS de pige immobilière, d'alertes personnalisées et de CRM destiné aux professionnels de l'immobilier.
                 </p>
                 <p>
-                  GetFlaire est édité par GetFlaire SAS, société par actions simplifiée au capital de 50 000 €, 
+                  GetFlaire est édité par GetFlaire, 
                   immatriculée au RCS de Paris sous le numéro B 123 456 789.
                 </p>
               </div>
@@ -207,7 +207,7 @@ export default function CGU() {
               </p>
               <div className="space-y-2">
                 <p><strong>Email :</strong> hello@getflaire.fr</p>
-                <p><strong>Adresse :</strong> GetFlaire SAS, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
+                <p><strong>Adresse :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
                 
               </div>
             </div>
