@@ -26,10 +26,9 @@ const PricingSection = () => {
       description: "Le plus populaire",
       icon: Crown,
       features: [
-        "3 départements inclus",
+        "1 départements inclus",
         "Pige immobilière avancée",
         "Alertes illimitées",
-        "CRM complet",
         "Surveillance concurrence",
         "Rappels automatiques",
         "Support prioritaire"
@@ -46,13 +45,12 @@ const PricingSection = () => {
       description: "Pour les grandes structures",
       icon: Crown,
       features: [
-        "Utilisateurs illimités",
-        "Départements illimités",
-        "API personnalisée",
-        "Intégrations sur mesure",
-        "Support dédié",
-        "Formation sur site",
-        "SLA garanti"
+        "1 département inclus",
+        "3 collaborateurs inclus",
+        "Surveillance concurrence",
+        "Rappels & gestion d’équipe",
+        "Tableau de bord centralisé",
+        "Support prioritaire"
       ],
       cta: "Nous contacter",
       popular: true
