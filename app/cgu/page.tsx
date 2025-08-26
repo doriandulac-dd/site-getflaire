@@ -99,10 +99,8 @@ export default function CGU() {
                   GetFlaire propose différentes formules d'abonnement adaptées aux besoins des utilisateurs :
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Plan Starter : 15€ HT/mois</li>
-                  <li>Plan Pro : 20€ HT/mois</li>
-                  <li>Plan Équipe : 30€ HT/mois</li>
-                  <li>Plan Enterprise : 50€ HT/mois</li>
+                  <li>Plan Pro : 29€ HT/mois</li>
+                  <li>Plan Enterprise : 79€ HT/mois</li>
                 </ul>
 
                 <h3 className="text-lg font-semibold text-[#1B263B]">4.2 Facturation</h3>
