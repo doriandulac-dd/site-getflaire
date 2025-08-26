@@ -255,7 +255,7 @@ const PricingSection = () => {
               Options supplémentaires
             </h3>
             <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
+              <div className={`flex justify-between items-center p-4 bg-gray-50 rounded-xl ${activeTab === 'independent' ? 'md:col-span-2' : ''}`}>
                 <span className="text-[#778DA9]">Département supplémentaire</span>
                 <span className="font-semibold text-[#1B263B]">+{additionalOption.price}€{additionalOption.period}</span>
               </div>
