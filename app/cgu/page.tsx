@@ -206,9 +206,9 @@ export default function CGU() {
                 Pour toute question relative aux présentes CGU, vous pouvez nous contacter :
               </p>
               <div className="space-y-2">
-                <p><strong>Email :</strong> legal@getflaire.fr</p>
-                <p><strong>Adresse :</strong> GetFlaire SAS, 123 Avenue des Champs-Élysées, 75008 Paris</p>
-                <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                <p><strong>Email :</strong> hello@getflaire.fr</p>
+                <p><strong>Adresse :</strong> GetFlaire, 11 rue de la fontaine nagot, 10120 Saint-André-les-Vergers</p>
+                
               </div>
             </div>
           </div>
