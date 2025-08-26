@@ -49,19 +49,70 @@ const PricingSection = () => {
 
   const currentPlans = activeTab === 'independent' ? independentPlans : agencyPlans;
 
-  // Calculate dynamic pricing for additional options
-  const getAdditionalOptionPrice = () => {
-    switch (billing) {
-      case 'quarterly':
-        return { price: 45, period: '/trimestre' }; // 15 * 3
-      case 'yearly':
-        return { price: 180, period: '/an' }; // 15 * 12
-      default:
-        return { price: 15, period: '/mois' };
+  // Define pricing for additional options
+  const additionalOptionsPrices = {
+    independent: {
+      department: {
+        monthly: 15,
+        quarterly: 43,
+        yearly: 153
+      }
+    },
+    agency: {
+      department: {
+        monthly: 20,
+        quarterly: 57,
+        yearly: 204
+      },
+      user: {
+        monthly: 15,
+        quarterly: 43,
+        yearly: 153
+      }
     }
   };
 
-  const additionalOption = getAdditionalOptionPrice();
+  // Get period text
+  const getPeriodText = () => {
+    switch (billing) {
+      case 'quarterly':
+        return '/trimestre';
+      case 'yearly':
+        return '/an';
+      default:
+        return '/mois';
+    }
+  };
+
+  // Get department price based on current settings
+  const getDepartmentPrice = () => {
+    const prices = activeTab === 'independent' 
+      ? additionalOptionsPrices.independent.department
+      : additionalOptionsPrices.agency.department;
+    
+    switch (billing) {
+      case 'quarterly':
+        return prices.quarterly;
+      case 'yearly':
+        return prices.yearly;
+      default:
+        return prices.monthly;
+    }
+  };
+
+  // Get user price (only for agencies)
+  const getUserPrice = () => {
+    const prices = additionalOptionsPrices.agency.user;
+    
+    switch (billing) {
+      case 'quarterly':
+        return prices.quarterly;
+      case 'yearly':
+        return prices.yearly;
+      default:
+        return prices.monthly;
+    }
+  };
 
   return (
     <section id="pricing" className="py-20 bg-gray-50">
@@ -257,12 +308,12 @@ const PricingSection = () => {
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div className={`flex justify-between items-center p-4 bg-gray-50 rounded-xl ${activeTab === 'independent' ? 'md:col-span-2' : ''}`}>
                 <span className="text-[#778DA9]">Département supplémentaire</span>
-                <span className="font-semibold text-[#1B263B]">+{additionalOption.price}€{additionalOption.period}</span>
+                <span className="font-semibold text-[#1B263B]">+{getDepartmentPrice()}€{getPeriodText()}</span>
               </div>
               {activeTab === 'agency' && (
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                  <span className="text-[#778DA9]">Utilisateur supplémentaire</span>
-                  <span className="font-semibold text-[#1B263B]">+{additionalOption.price}€{additionalOption.period}</span>
+                  <span className="text-[#778DA9]">Compte supplémentaire</span>
+                  <span className="font-semibold text-[#1B263B]">+{getUserPrice()}€{getPeriodText()}</span>
                 </div>
               )}
             </div>
