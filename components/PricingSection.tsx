@@ -8,16 +8,6 @@ const PricingSection = () => {
   const [activeTab, setActiveTab] = useState<'independent' | 'agency'>('independent');
   const [billing, setBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
 
-  const getBillingLabel = () => {
-    switch (billing) {
-      case 'quarterly':
-        return '/mois (facturation trimestrielle)';
-      case 'yearly':
-        return '/mois (facturation annuelle)';
-      default:
-        return '/mois';
-    }
-  };
 
   const independentPlans = [
     {
@@ -142,6 +132,33 @@ const PricingSection = () => {
                 plan.popular ? 'ring-4 ring-[#FFB23F] ring-opacity-50' : ''
               }`}
             >
+              {(() => {
+                let amountToPay: number;
+                let billingPeriodText: string;
+                let periodMultiplier: number;
+
+                switch (billing) {
+                  case 'quarterly':
+                    amountToPay = Math.round(plan.prices.quarterly * 3 * 100) / 100;
+                    billingPeriodText = '/trimestre';
+                    periodMultiplier = 3;
+                    break;
+                  case 'yearly':
+                    amountToPay = Math.round(plan.prices.yearly * 12 * 100) / 100;
+                    billingPeriodText = '/an';
+                    periodMultiplier = 12;
+                    break;
+                  default:
+                    amountToPay = plan.prices.monthly;
+                    billingPeriodText = '/mois';
+                    periodMultiplier = 1;
+                }
+
+                const monthlyTotal = plan.prices.monthly * periodMultiplier;
+                const savings = Math.round((monthlyTotal - amountToPay) * 100) / 100;
+
+                return (
+                  <>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-[#FFB23F] text-white px-6 py-2 rounded-full text-sm font-semibold">
@@ -166,17 +183,17 @@ const PricingSection = () => {
                 <div className="mb-6">
                   <div className="flex items-baseline justify-center">
                     <span className="text-4xl font-bold text-[#1B263B]">
-                      {plan.prices[billing]}€
+                      {amountToPay}€
                     </span>
                     <span className="text-[#778DA9] ml-1">
-                      {getBillingLabel()}
+                      {billingPeriodText}
                     </span>
                   </div>
                   {billing !== 'monthly' && (
                     <div className="text-sm text-[#778DA9] mt-1">
-                      <span className="line-through">{plan.prices.monthly}€/mois</span>
+                      <span className="line-through">{monthlyTotal}€{billingPeriodText}</span>
                       <span className="text-green-600 font-semibold ml-2">
-                        Économisez {((plan.prices.monthly - plan.prices[billing]) * (billing === 'yearly' ? 12 : 3)).toFixed(0)}€
+                        Économisez {savings}€
                       </span>
                     </div>
                   )}
@@ -210,6 +227,9 @@ const PricingSection = () => {
                   Conditions
                 </a>
               </p>
+                  </>
+                );
+              })()}
             </div>
           ))}
         </div>
