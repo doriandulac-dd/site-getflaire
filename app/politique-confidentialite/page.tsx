@@ -396,7 +396,3 @@ export default function PolitiqueConfidentialite() {
     </main>
   );
 }
-  )
-}
-  )
-}
