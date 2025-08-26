@@ -136,7 +136,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+        <div className="grid md:grid-cols-1 gap-8 max-w-lg mx-auto">
           {currentPlans.map((plan, index) => (
             <div
               key={index}
@@ -218,7 +218,7 @@ const PricingSection = () => {
 
         {/* Additional Options */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-3xl p-6 shadow-xl max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl p-6 shadow-xl max-w-lg mx-auto">
             <h3 className="text-xl font-semibold text-[#1B263B] mb-4">
               Options supplémentaires
             </h3>
