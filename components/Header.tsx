@@ -71,7 +71,7 @@ const Header = () => {
               Connexion
             </Button>
             <Button 
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
               className="bg-[#FFB23F] hover:bg-[#FF8F00] text-white"
             >
               Essayer gratuitement
