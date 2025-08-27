@@ -41,6 +41,3 @@ export const supabaseAdmin = hasValidSupabaseConfig && supabaseServiceRoleKey !=
       }
     )
   : null
-    }
-  }
-)
