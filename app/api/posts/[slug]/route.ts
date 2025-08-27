@@ -10,7 +10,7 @@ export async function GET(
     return NextResponse.json({ error: 'Post not found' }, { status: 404 });
   }
 
-  // Additional null check for TypeScript
+  // IMPORTANT: Add this guard to satisfy TypeScript
   if (!supabase) {
     return NextResponse.json({ error: 'Post not found' }, { status: 404 });
   }
@@ -26,7 +26,7 @@ export async function GET(
       .single();
 
     if (error) {
-      if (error.code === 'PGRST116') {
+      if ((error as any).code === 'PGRST116') {
         return NextResponse.json({ error: 'Post not found' }, { status: 404 });
       }
       throw error;
