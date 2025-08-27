@@ -7,7 +7,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholde
 export const hasValidSupabaseConfig = 
   supabaseUrl !== 'https://placeholder.supabase.co' && 
   supabaseAnonKey !== 'placeholder-key' &&
-  !supabaseUrl.includes('your-project-id') &&
+  !supabaseAnonKey.includes('your_real_anon_key_here') &&
   !supabaseAnonKey.includes('your_anon_key_here') &&
   supabaseUrl.includes('supabase.co') &&
   supabaseUrl.startsWith('https://') &&
