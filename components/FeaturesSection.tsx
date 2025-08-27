@@ -1,4 +1,4 @@
-import { Search, Bell, Eye, Users, Target } from 'lucide-react';
+import { Search, Bell, Eye, Users, Target, Calendar } from 'lucide-react';
 
 const FeaturesSection = () => {
   const features = [
