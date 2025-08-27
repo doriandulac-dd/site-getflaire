@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, hasValidSupabaseConfig } from '@/lib/supabase';
 
 export async function GET() {
+  // Return empty array if Supabase is not configured
+  if (!hasValidSupabaseConfig) {
+    return NextResponse.json([]);
+  }
+
   try {
     const { data, error } = await supabase
       .from('posts')
@@ -14,6 +19,6 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching posts:', error);
-    return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });
+    return NextResponse.json([]);
   }
 }

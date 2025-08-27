@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, hasValidSupabaseConfig } from '@/lib/supabase';
 
 export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
+  // Return 404 if Supabase is not configured
+  if (!hasValidSupabaseConfig) {
+    return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+  }
+
   try {
     const { slug } = params;
     
@@ -25,6 +30,6 @@ export async function GET(
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching post:', error);
-    return NextResponse.json({ error: 'Failed to fetch post' }, { status: 500 });
+    return NextResponse.json({ error: 'Post not found' }, { status: 404 });
   }
 }
