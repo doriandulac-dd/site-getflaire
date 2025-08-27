@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ArrowLeft, XCircle, Calendar, Settings, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, XCircle, Settings, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Annulation() {
@@ -53,7 +53,6 @@ export default function Annulation() {
               <p className="text-sm text-[#778DA9]">Cliquez sur &quot;Annuler l&apos;abonnement&quot;</p>
             </div>
             <div className="bg-green-50 rounded-2xl p-6 text-center">
-              <Calendar className="h-8 w-8 text-green-500 mx-auto mb-4" />
               <h3 className="font-semibold text-[#1B263B] mb-2">3. Effet différé</h3>
               <p className="text-sm text-[#778DA9]">Service actif jusqu&apos;à la fin de période</p>
             </div>
