@@ -174,9 +174,8 @@ export default function BlogPost() {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg prose-slate max-w-none prose-headings:text-[#1B263B] prose-p:text-[#778DA9] prose-strong:text-[#1B263B] prose-a:text-[#FFB23F] hover:prose-a:text-[#FF8F00]">
               <div 
-                className="text-[#778DA9] leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>

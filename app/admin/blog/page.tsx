@@ -307,11 +307,21 @@ export default function AdminBlog() {
                       required
                       rows={12}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#FFB23F] focus:border-transparent resize-vertical font-mono text-sm"
-                      placeholder="Contenu HTML de l'article"
+                      placeholder="Contenu HTML de l'article - Exemple:
+<h2>Titre de section</h2>
+<p>Paragraphe avec du texte. Utilisez <strong>strong</strong> pour mettre en gras.</p>
+<ul>
+  <li>Premier élément de liste</li>
+  <li>Deuxième élément</li>
+</ul>"
                     />
-                    <p className="text-xs text-[#778DA9] mt-1">
-                      Vous pouvez utiliser du HTML pour formater le contenu
-                    </p>
+                    <div className="text-xs text-[#778DA9] mt-2 space-y-1">
+                      <p><strong>Formatage HTML recommandé :</strong></p>
+                      <p>• Titres : &lt;h2&gt;Titre&lt;/h2&gt; ou &lt;h3&gt;Sous-titre&lt;/h3&gt;</p>
+                      <p>• Paragraphes : &lt;p&gt;Votre texte&lt;/p&gt;</p>
+                      <p>• Gras : &lt;strong&gt;texte important&lt;/strong&gt;</p>
+                      <p>• Listes : &lt;ul&gt;&lt;li&gt;élément&lt;/li&gt;&lt;/ul&gt;</p>
+                    </div>
                   </div>
 
                   <div className="flex items-center">
