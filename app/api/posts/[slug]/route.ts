@@ -10,6 +10,11 @@ export async function GET(
     return NextResponse.json({ error: 'Post not found' }, { status: 404 });
   }
 
+  // Additional null check for TypeScript
+  if (!supabase) {
+    return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+  }
+
   try {
     const { slug } = params;
     
