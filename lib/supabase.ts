@@ -3,31 +3,44 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
 
-// Log environment variables for debugging (only in development)
-if (process.env.NODE_ENV === 'development') {
-  console.log('Supabase URL:', supabaseUrl)
-  console.log('Supabase Anon Key (first 20 chars):', supabaseAnonKey.substring(0, 20) + '...')
-}
-
 // Check if we have real Supabase credentials
-export const hasValidSupabaseConfig = supabaseUrl !== 'https://placeholder.supabase.co' && 
+export const hasValidSupabaseConfig = 
+  supabaseUrl !== 'https://placeholder.supabase.co' && 
   supabaseAnonKey !== 'placeholder-key' &&
   !supabaseUrl.includes('your-project-id') &&
   !supabaseAnonKey.includes('your_anon_key_here') &&
-  supabaseUrl.includes('supabase.co')
+  supabaseUrl.includes('supabase.co') &&
+  supabaseUrl.startsWith('https://') &&
+  supabaseAnonKey.length > 20
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Log configuration status for debugging (only in development)
+if (process.env.NODE_ENV === 'development') {
+  console.log('Supabase configuration status:', {
+    hasValidConfig: hasValidSupabaseConfig,
+    urlValid: supabaseUrl !== 'https://placeholder.supabase.co' && supabaseUrl.includes('supabase.co'),
+    keyValid: supabaseAnonKey !== 'placeholder-key' && supabaseAnonKey.length > 20
+  })
+}
+
+export const supabase = hasValidSupabaseConfig 
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : null
 
 // Client pour les opérations admin (côté serveur uniquement)
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-service-key'
 
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  supabaseServiceRoleKey,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
+export const supabaseAdmin = hasValidSupabaseConfig && supabaseServiceRoleKey !== 'placeholder-service-key'
+  ? createClient(
+      supabaseUrl,
+      supabaseServiceRoleKey,
+      {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false
+        }
+      }
+    )
+  : null
     }
   }
 )

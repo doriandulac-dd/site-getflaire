@@ -4,12 +4,17 @@ import { supabase, hasValidSupabaseConfig } from '@/lib/supabase';
 export async function GET() {
   // Return empty array if Supabase is not configured
   if (!hasValidSupabaseConfig) {
-    console.log('Supabase not configured properly, returning empty array')
+    console.log('Supabase not configured properly, returning empty array');
+    return NextResponse.json([]);
+  }
+
+  if (!supabase) {
+    console.log('Supabase client not initialized, returning empty array');
     return NextResponse.json([]);
   }
 
   try {
-    console.log('Attempting to fetch posts from Supabase...')
+    console.log('Attempting to fetch posts from Supabase...');
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -17,18 +22,16 @@ export async function GET() {
       .order('published_at', { ascending: false });
 
     if (error) {
-      console.error('Supabase query error:', error)
+      console.error('Supabase query error:', error);
       throw error;
     }
 
-    console.log('Successfully fetched posts:', data?.length || 0, 'posts')
+    console.log('Successfully fetched posts:', data?.length || 0, 'posts');
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Error fetching posts:', {
+    console.error('Failed to fetch posts - returning empty array:', {
       message: error instanceof Error ? error.message : 'Unknown error',
-      details: error instanceof Error ? error.stack : error,
-      hint: 'Check your Supabase credentials and network connection',
-      code: error instanceof Error && 'code' in error ? error.code : ''
+      hint: 'This is likely due to missing or incorrect Supabase credentials'
     });
     return NextResponse.json([]);
   }
