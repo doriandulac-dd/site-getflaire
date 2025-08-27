@@ -8,7 +8,7 @@ export async function GET() {
   }
 
   try {
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin!
       .from('posts')
       .select('*')
       .order('created_at', { ascending: false });
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin!
       .from('posts')
       .insert([{
         ...body,
