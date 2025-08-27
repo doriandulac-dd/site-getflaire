@@ -23,14 +23,24 @@ export default function Blog() {
 
   useEffect(() => {
     fetchPosts();
+    
+    // Debug: Log Supabase configuration status
+    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
+    console.log('Has valid Supabase config:', !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
   }, []);
 
   const fetchPosts = async () => {
     try {
+      console.log('Fetching posts from:', '/api/posts');
       const response = await fetch('/api/posts');
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
       if (response.ok) {
         const data = await response.json();
+        console.log('Posts data:', data);
         setPosts(data);
+      } else {
+        console.error('Failed to fetch posts:', response.status, response.statusText);
       }
     } catch (error) {
       console.error('Error fetching posts:', error);
