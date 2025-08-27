@@ -19,22 +19,6 @@ interface BlogPost {
   image_url?: string;
 }
 
-export async function generateStaticParams() {
-  try {
-    const { data: posts } = await supabase
-      .from('posts')
-      .select('slug')
-      .eq('published', true);
-    
-    return posts?.map((post) => ({
-      slug: post.slug,
-    })) || [];
-  } catch (error) {
-    console.error('Error generating static params:', error);
-    return [];
-  }
-}
-
 export default function BlogPost() {
   const params = useParams();
   const slug = params.slug as string;
