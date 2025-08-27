@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin, hasValidSupabaseConfig } from '@/lib/supabase';
+import { supabaseAdmin, hasValidSupabaseAdminConfig } from '@/lib/supabase';
 
 export async function GET() {
   // Return empty array if Supabase is not configured
-  if (!hasValidSupabaseConfig) {
+  if (!hasValidSupabaseAdminConfig) {
     return NextResponse.json([]);
   }
 
@@ -24,7 +24,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   // Return error if Supabase is not configured
-  if (!hasValidSupabaseConfig) {
+  if (!hasValidSupabaseAdminConfig) {
     return NextResponse.json({ error: 'Supabase not configured' }, { status: 503 });
   }
 

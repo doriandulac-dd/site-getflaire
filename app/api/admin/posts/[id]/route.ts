@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin, hasValidSupabaseConfig } from '@/lib/supabase';
+import { supabaseAdmin, hasValidSupabaseAdminConfig } from '@/lib/supabase';
 
 export async function PUT(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   // Return error if Supabase is not configured
-  if (!hasValidSupabaseConfig) {
+  if (!hasValidSupabaseAdminConfig) {
     return NextResponse.json({ error: 'Supabase not configured' }, { status: 503 });
   }
 
@@ -39,7 +39,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   // Return error if Supabase is not configured
-  if (!hasValidSupabaseConfig) {
+  if (!hasValidSupabaseAdminConfig) {
     return NextResponse.json({ error: 'Supabase not configured' }, { status: 503 });
   }
 

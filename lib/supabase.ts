@@ -29,7 +29,15 @@ export const supabase = hasValidSupabaseConfig
 // Client pour les opérations admin (côté serveur uniquement)
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-service-key'
 
-export const supabaseAdmin = hasValidSupabaseConfig && supabaseServiceRoleKey !== 'placeholder-service-key'
+// Check if we have valid admin configuration
+export const hasValidSupabaseAdminConfig = 
+  hasValidSupabaseConfig && 
+  supabaseServiceRoleKey !== 'placeholder-service-key' &&
+  !supabaseServiceRoleKey.includes('your_real_service_role_key_here') &&
+  !supabaseServiceRoleKey.includes('your_service_role_key_here') &&
+  supabaseServiceRoleKey.length > 20
+
+export const supabaseAdmin = hasValidSupabaseAdminConfig
   ? createClient(
       supabaseUrl,
       supabaseServiceRoleKey,
