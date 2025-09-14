@@ -67,7 +67,7 @@ const BlogSection = () => {
               
               <div className="p-6">
                 {/* Category */}
-                {post.categories && (
+                {post.categories?.name && (
                   <div className="mb-3">
                     <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-3 py-1 rounded-full text-sm font-medium">
                       {post.categories.name}
@@ -89,7 +89,7 @@ const BlogSection = () => {
                 <div className="flex items-center justify-between text-xs text-[#778DA9] mb-4">
                   <div className="flex items-center space-x-2">
                     <User className="h-3 w-3" />
-                    <span>{post.authors.name}</span>
+                    <span>{post.author}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Calendar className="h-3 w-3" />

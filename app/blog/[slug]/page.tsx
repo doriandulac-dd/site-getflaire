@@ -125,7 +125,7 @@ export default function BlogPost() {
           {/* Article Header */}
           <article className="mb-12">
             {/* Category */}
-            {post.categories && (
+            {post.categories?.name && (
               <div className="mb-4">
                 <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-medium">
                   {post.categories.name}
@@ -142,7 +142,7 @@ export default function BlogPost() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-8 border-b border-gray-200">
               <div className="flex items-center space-x-6 mb-4 sm:mb-0">
                 <div className="flex items-center space-x-3">
-                  {post.authors.avatar_url ? (
+                  {post.authors?.avatar_url ? (
                     <img 
                       src={post.authors.avatar_url} 
                       alt={post.authors.name}
@@ -154,8 +154,8 @@ export default function BlogPost() {
                     </div>
                   )}
                   <div>
-                    <p className="font-medium text-[#1B263B]">{post.authors.name}</p>
-                    {post.authors.bio && (
+                    <p className="font-medium text-[#1B263B]">{post.author}</p>
+                    {post.authors?.bio && (
                       <p className="text-sm text-[#778DA9]">{post.authors.bio}</p>
                     )}
                   </div>
