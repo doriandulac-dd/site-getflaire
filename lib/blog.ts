@@ -16,8 +16,8 @@ export async function getPosts(): Promise<PostWithAuthor[]> {
     .from('posts')
     .select(`
       *,
-      authors (*),
-      categories (*)
+      authors:authors!author_id(*),
+      categories:categories!category_id(*)
     `)
     .eq('is_published', true)
     .order('published_at', { ascending: false });
@@ -36,8 +36,8 @@ export async function getPostBySlug(slug: string): Promise<PostWithAuthor | null
     .from('posts')
     .select(`
       *,
-      authors (*),
-      categories (*)
+      authors:authors!author_id(*),
+      categories:categories!category_id(*)
     `)
     .eq('slug', slug)
     .eq('is_published', true)
@@ -57,8 +57,8 @@ export async function getRecentPosts(limit: number = 3): Promise<PostWithAuthor[
     .from('posts')
     .select(`
       *,
-      authors (*),
-      categories (*)
+      authors:authors!author_id(*),
+      categories:categories!category_id(*)
     `)
     .eq('is_published', true)
     .order('published_at', { ascending: false })
@@ -93,8 +93,8 @@ export async function getPostsByCategory(categorySlug: string): Promise<PostWith
     .from('posts')
     .select(`
       *,
-      authors (*),
-      categories (*)
+      authors:authors!author_id(*),
+      categories:categories!category_id(*)
     `)
     .eq('is_published', true)
     .eq('categories.slug', categorySlug)
