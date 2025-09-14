@@ -13,19 +13,17 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export type Database = {
   public: {
     Tables: {
-      posts: {
+      Blog: {
         Row: {
           id: string;
           created_at: string;
           title: string;
           slug: string;
           excerpt: string;
-          content: string;
           image_url: string | null;
-          author_id: string;
-          category_id: string | null;
+          author: string;
           published_at: string | null;
-          is_published: boolean;
+          published: boolean;
         };
         Insert: {
           id?: string;
@@ -33,12 +31,10 @@ export type Database = {
           title: string;
           slug: string;
           excerpt: string;
-          content: string;
           image_url?: string | null;
-          author_id: string;
-          category_id?: string | null;
+          author: string;
           published_at?: string | null;
-          is_published?: boolean;
+          published?: boolean;
         };
         Update: {
           id?: string;
@@ -46,55 +42,10 @@ export type Database = {
           title?: string;
           slug?: string;
           excerpt?: string;
-          content?: string;
           image_url?: string | null;
-          author_id?: string;
-          category_id?: string | null;
+          author?: string;
           published_at?: string | null;
-          is_published?: boolean;
-        };
-      };
-      authors: {
-        Row: {
-          id: string;
-          created_at: string;
-          name: string;
-          avatar_url: string | null;
-          bio: string | null;
-        };
-        Insert: {
-          id?: string;
-          created_at?: string;
-          name: string;
-          avatar_url?: string | null;
-          bio?: string | null;
-        };
-        Update: {
-          id?: string;
-          created_at?: string;
-          name?: string;
-          avatar_url?: string | null;
-          bio?: string | null;
-        };
-      };
-      categories: {
-        Row: {
-          id: string;
-          created_at: string;
-          name: string;
-          slug: string;
-        };
-        Insert: {
-          id?: string;
-          created_at?: string;
-          name: string;
-          slug: string;
-        };
-        Update: {
-          id?: string;
-          created_at?: string;
-          name?: string;
-          slug?: string;
+          published?: boolean;
         };
       };
     };
