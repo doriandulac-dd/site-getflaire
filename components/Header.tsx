@@ -59,6 +59,12 @@ const Header = () => {
             >
               Contact
             </button>
+            <button 
+              onClick={() => window.location.href = '/blog'}
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
+            >
+              Blog
+            </button>
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -116,6 +122,12 @@ const Header = () => {
                 className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
               >
                 Contact
+              </button>
+              <button 
+                onClick={() => window.location.href = '/blog'}
+                className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
+              >
+                Blog
               </button>
               
               <div className="pt-4 space-y-2">
