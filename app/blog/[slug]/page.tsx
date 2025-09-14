@@ -9,20 +9,6 @@ import { Button } from '@/components/ui/button';
 import { getPostBySlug } from '@/lib/blog';
 import type { PostWithAuthor } from '@/lib/blog';
 
-export async function generateStaticParams() {
-  try {
-    const { getPosts } = await import('@/lib/blog');
-    const posts = await getPosts();
-    
-    return posts.map((post) => ({
-      slug: post.slug,
-    }));
-  } catch (error) {
-    console.error('Error generating static params:', error);
-    return [];
-  }
-}
-
 export default function BlogPost() {
   const params = useParams();
   const slug = params.slug as string;
