@@ -97,7 +97,7 @@ export default function Blog() {
                   
                   <div className="p-6">
                     {/* Category */}
-                    {post.categories && (
+                    {post.categories?.name && (
                       <div className="mb-3">
                         <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-3 py-1 rounded-full text-sm font-medium">
                           {post.categories.name}
@@ -120,7 +120,7 @@ export default function Blog() {
                       <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-2">
                           <User className="h-4 w-4" />
-                          <span>{post.authors.name}</span>
+                          <span>{post.author}</span>
                         </div>
                         <div className="flex items-center space-x-2">
                           <Calendar className="h-4 w-4" />
