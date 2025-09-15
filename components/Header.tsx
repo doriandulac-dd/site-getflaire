@@ -60,7 +60,7 @@ const Header = () => {
               Contact
             </button>
             <button 
-              onClick={() => window.location.href = '/blog'}
+              onClick={() => window.location.href = 'https://blog.getflaire.fr'}
               className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Blog
