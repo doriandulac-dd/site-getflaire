@@ -10,11 +10,11 @@ import { buttonVariants } from "@/components/ui/button"
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 // Define custom icon components outside of the components object
-const CustomIconLeft = (props: React.ComponentProps<"svg">) => (
+const CustomIconLeft = ({ ref, ...props }: React.ComponentProps<"svg">) => (
   <ChevronLeft className="h-4 w-4" {...props} />
 )
 
-const CustomIconRight = (props: React.ComponentProps<"svg">) => (
+const CustomIconRight = ({ ref, ...props }: React.ComponentProps<"svg">) => (
   <ChevronRight className="h-4 w-4" {...props} />
 )
 
