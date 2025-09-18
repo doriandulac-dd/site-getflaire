@@ -124,7 +124,7 @@ const Header = () => {
                 Contact
               </button>
               <button 
-                onClick={() => window.location.href = '/blog'}
+                onClick={() => window.location.href = 'https://blog.getflaire.fr'}
                 className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
               >
                 Blog
