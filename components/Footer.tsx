@@ -82,7 +82,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="https://blog.getflaire.fr" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
+                <a href="https://leblog.getflaire.fr" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
                   Blog
                 </a>
               </li>
