@@ -15,9 +15,11 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="mb-6">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-[#FFB23F] to-[#FF8F00] bg-clip-text text-transparent">
-                GetFlaire
-              </h3>
+              <img 
+                src="/GetFlaire logo long hd 2000*500-min.png" 
+                alt="Logo GetFlaire" 
+                className="h-12 w-auto"
+              />
               <p className="text-[#778DA9] mt-2 text-lg">
                 La pige immobilière nouvelle génération
               </p>
