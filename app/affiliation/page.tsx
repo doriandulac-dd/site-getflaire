@@ -208,7 +208,7 @@ export default function Affiliation() {
                     <input
                       type="range"
                       min="1"
-                      max="20"
+                      max="50"
                       value={monthlyReferrals}
                       onChange={(e) => setMonthlyReferrals(parseInt(e.target.value))}
                       className="w-full"
