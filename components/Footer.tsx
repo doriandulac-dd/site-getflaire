@@ -135,6 +135,11 @@ const Footer = () => {
                   RGPD
                 </a>
               </li>
+              <li>
+                <a href="/affiliation" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
+                  Affiliation
+                </a>
+              </li>
             </ul>
           </div>
         </div>
