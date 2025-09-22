@@ -7,7 +7,7 @@ import { ArrowLeft, Users, Euro, TrendingUp, Gift, CheckCircle, Star, Calculator
 import { Button } from '@/components/ui/button';
 
 export default function Affiliation() {
-  const [monthlyReferrals, setMonthlyReferrals] = useState(5);
+  const [monthlyReferrals, setMonthlyReferrals] = useState(15);
   const [averagePrice, setAveragePrice] = useState(29);
 
   const calculateEarnings = () => {
