@@ -43,7 +43,7 @@ export default function Affiliation() {
               <Users className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
-              Transformez vos recommandations en revenus passifs
+              Recommandez GetFlaire, Touchez 30%. À vie.
             </h1>
             <p className="text-xl text-[#778DA9] max-w-3xl mx-auto mb-8">
               Chaque inscription à GetFlaire via votre lien vous rapporte jusqu’à 30% de commission récurrente. 
