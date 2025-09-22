@@ -43,11 +43,11 @@ export default function Affiliation() {
               <Users className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
-              Programme d'affiliation GetFlaire
+              Transformez vos recommandations en revenus passifs
             </h1>
             <p className="text-xl text-[#778DA9] max-w-3xl mx-auto mb-8">
-              Rejoignez notre programme d'affiliation et gagnez jusqu'à 30% de commission récurrente 
-              en recommandant GetFlaire à votre réseau professionnel.
+              Chaque inscription à GetFlaire via votre lien vous rapporte jusqu’à 30% de commission récurrente. 
+              Des gains sans plafond, tous les mois.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
