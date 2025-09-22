@@ -372,8 +372,8 @@ export default function Affiliation() {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h4 className="font-semibold text-[#1B263B] mb-3">Quand suis-je payé ?</h4>
                 <p className="text-[#778DA9]">
-                  Les commissions sont versées mensuellement, le 15 de chaque mois, 
-                  pour les ventes du mois précédent. Paiement par virement bancaire.
+                  Les commissions sont versées automatiquement, le 15 de chaque mois, 
+                  pour les ventes du mois précédent. Paiement par l'intermédiaire de PayPal. Le processus de paiement peut prendre quelques jours. Veuillez donc prévoir 3 à 5 jours pour que les fonds apparaissent sur votre compte.
                 </p>
               </div>
               
