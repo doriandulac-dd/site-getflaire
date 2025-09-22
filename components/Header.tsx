@@ -65,6 +65,12 @@ const Header = () => {
             >
               Blog
             </button>
+            <button 
+              onClick={() => window.location.href = '/affiliation'}
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
+            >
+              Affiliation
+            </button>
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -128,6 +134,12 @@ const Header = () => {
                 className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
               >
                 Blog
+              </button>
+              <button 
+                onClick={() => window.location.href = '/affiliation'}
+                className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
+              >
+                Affiliation
               </button>
               
               <div className="pt-4 space-y-2">
