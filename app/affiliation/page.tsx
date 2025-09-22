@@ -426,7 +426,7 @@ export default function Affiliation() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1B263B] px-8 py-4 rounded-2xl font-semibold transition-all duration-200"
+               className="bg-white text-[#1B263B] hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
                 onClick={() => window.location.href = '/contact'}
               >
                 <Phone className="mr-2 h-5 w-5" />
