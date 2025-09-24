@@ -35,9 +35,6 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-[#FFB23F] to-green-500 transform -translate-y-1/2 rounded-full"></div>
-
           <div className="grid lg:grid-cols-3 gap-12 relative z-10">
             {steps.map((step, index) => (
               <div key={index} className="text-center group">
