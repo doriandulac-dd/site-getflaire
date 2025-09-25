@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: 'Pige, alertes, surveillance et CRM réunis dans une seule application. Boostez votre prospection immobilière avec GetFlaire.',
   keywords: 'pige immobilière, CRM immobilier, surveillance concurrence, alertes immobilières, prospection immobilière',
   icons: {
-    icon: '/GetFlaire Faticon 16x16.png',
-    shortcut: '/GetFlaire Faticon 16x16.png',
-    apple: '/GetFlaire Faticon 16x16.png',
+    icon: '/GetFlaire_Faticon_16x16.png',
+    shortcut: '/GetFlaire_Faticon_16x16.png',
+    apple: '/GetFlaire_Faticon_16x16.png',
   },
 };
 
