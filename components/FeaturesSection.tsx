@@ -104,7 +104,7 @@ const FeaturesSection = () => {
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
                 <img 
-                  src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                  src="/1.jpg" 
                   alt="Tableau de bord GetFlaire" 
                   className="w-full h-full object-cover rounded-xl"
                 />
