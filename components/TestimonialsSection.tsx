@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
     {
       name: "Thomas Martin",
       role: "Directeur d'agence",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+      image: "/Thomas.jpg",
       content: "L'outil parfait pour notre équipe de 8 agents. La collaboration est fluide et les résultats sont au rendez-vous.",
       rating: 5
     },
