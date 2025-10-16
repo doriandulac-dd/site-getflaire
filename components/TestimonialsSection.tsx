@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
     {
       name: "Sophie Laurent",
       role: "Négociatrice immobilière",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
+      image: "/Sophie.jpg",
       content: "Interface intuitive et alertes précises. Je recommande GetFlaire à tous mes collègues du secteur immobilier.",
       rating: 5
     }
