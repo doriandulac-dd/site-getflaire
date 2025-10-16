@@ -5,7 +5,7 @@ const TestimonialsSection = () => {
     {
       name: "Marie Dubois",
       role: "Agent immobilier indépendant",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+      image: "/Marie.jpg",
       content: "GetFlaire a révolutionné ma façon de travailler. Je gagne 3h par jour sur ma prospection et je signe 40% de mandats en plus !",
       rating: 5
     },
