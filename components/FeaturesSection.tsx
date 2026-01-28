@@ -35,31 +35,41 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFB23F] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1B263B] rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1B263B] mb-4">
-            Toutes les fonctionnalités dont vous avez besoin
+          <div className="inline-block mb-4">
+            <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
+              Fonctionnalités
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
+            Une plateforme complète pour votre prospection
           </h2>
-          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto">
-            GetFlaire centralise tous vos outils de prospection immobilière dans une seule plateforme intuitive et performante.
+          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
+            Tous les outils dont vous avez besoin pour automatiser votre veille immobilière et booster votre activité.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100 hover:border-[#FFB23F]/30"
             >
-              <div className="bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] rounded-2xl p-4 w-16 h-16 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="h-8 w-8 text-white" />
+              <div className="bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] rounded-xl p-3 w-14 h-14 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <feature.icon className="h-7 w-7 text-white" />
               </div>
-              
-              <h3 className="text-xl font-semibold text-[#1B263B] mb-4">
+
+              <h3 className="text-xl font-bold text-[#1B263B] mb-3 group-hover:text-[#FFB23F] transition-colors">
                 {feature.title}
               </h3>
-              
+
               <p className="text-[#778DA9] leading-relaxed">
                 {feature.description}
               </p>
@@ -68,73 +78,90 @@ const FeaturesSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 bg-white rounded-3xl p-8 shadow-xl">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-[#FFB23F] mb-2">2000+</div>
-              <div className="text-[#778DA9]">Professionnels utilisent GetFlaire</div>
+        <div className="mt-20 bg-gradient-to-br from-[#1B263B] to-[#2A3B52] rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
+          </div>
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <h3 className="text-3xl font-bold text-white mb-3">GetFlaire en chiffres</h3>
+              <p className="text-white/70 text-lg">Des résultats concrets pour les professionnels de l'immobilier</p>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-[#FFB23F] mb-2">95%</div>
-              <div className="text-[#778DA9]">Taux de satisfaction client</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#FFB23F] mb-2">50k+</div>
-              <div className="text-[#778DA9]">Annonces analysées par jour</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[#FFB23F] mb-2">24/7</div>
-              <div className="text-[#778DA9]">Surveillance automatique</div>
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
+                <div className="text-5xl font-bold text-[#FFB23F] mb-3">+2000</div>
+                <div className="text-white/80 font-medium">Professionnels actifs</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
+                <div className="text-5xl font-bold text-[#FFB23F] mb-3">95%</div>
+                <div className="text-white/80 font-medium">Satisfaction client</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
+                <div className="text-5xl font-bold text-[#FFB23F] mb-3">50k+</div>
+                <div className="text-white/80 font-medium">Annonces par jour</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
+                <div className="text-5xl font-bold text-[#FFB23F] mb-3">24/7</div>
+                <div className="text-white/80 font-medium">Surveillance active</div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Screenshots Section */}
-        <div className="mt-20">
+        <div className="mt-24">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-[#1B263B] mb-4">
-              Découvrez GetFlaire en images
+            <div className="inline-block mb-4">
+              <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
+                Aperçu de l'interface
+              </span>
+            </div>
+            <h3 className="text-3xl font-bold text-[#1B263B] mb-4">
+              Une interface pensée pour vous
             </h3>
-            <p className="text-lg text-[#778DA9]">
-              Interface intuitive et fonctionnalités puissantes pour votre prospection
+            <p className="text-lg text-[#778DA9] max-w-2xl mx-auto">
+              Découvrez une plateforme intuitive qui simplifie votre quotidien
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
-                <img 
-                  src="/1.jpg" 
-                  alt="Tableau de bord GetFlaire" 
-                  className="w-full h-full object-cover rounded-xl"
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
+              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
+                <img
+                  src="/1.jpg"
+                  alt="Tableau de bord GetFlaire"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Tableau de bord</h4>
-              <p className="text-[#778DA9] text-sm">Vue d'ensemble de votre activité et de vos performances</p>
+              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">Tableau de bord</h4>
+              <p className="text-[#778DA9] text-sm leading-relaxed">Vue d'ensemble complète de votre activité et de vos performances</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
-                <img 
-                  src="/2.jpg" 
-                  alt="Système d'alertes GetFlaire" 
-                  className="w-full h-full object-cover rounded-xl"
+            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
+              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
+                <img
+                  src="/2.jpg"
+                  alt="Système d'alertes GetFlaire"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">Alertes intelligentes</h4>
-              <p className="text-[#778DA9] text-sm">Notifications personnalisées pour ne rien manquer</p>
+              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">Alertes intelligentes</h4>
+              <p className="text-[#778DA9] text-sm leading-relaxed">Notifications personnalisées pour ne jamais manquer une opportunité</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="bg-gray-200 rounded-xl h-48 mb-4 flex items-center justify-center">
-                <img 
-                  src="/3.jpg" 
-                  alt="CRM intégré GetFlaire" 
-                  className="w-full h-full object-cover rounded-xl"
+            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
+              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
+                <img
+                  src="/3.jpg"
+                  alt="CRM intégré GetFlaire"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h4 className="text-lg font-semibold text-[#1B263B] mb-2">CRM intégré</h4>
-              <p className="text-[#778DA9] text-sm">Gestion complète de vos prospects et clients</p>
+              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">CRM intégré</h4>
+              <p className="text-[#778DA9] text-sm leading-relaxed">Gestion complète et centralisée de vos prospects et clients</p>
             </div>
           </div>
         </div>
