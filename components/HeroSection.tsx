@@ -30,12 +30,12 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Gagnez du temps,
-              <span className="block text-[#FFB23F]">signez plus de mandats</span>
+              Pilotez votre prospection,
+              <span className="block text-[#FFB23F]">transformez vos opportunités en mandats</span>
             </h1>
 
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Automatisez votre prospection immobilière avec notre plateforme tout-en-un : pige intelligente, alertes, CRM et surveillance concurrence.
+              Gardez une longueur d'avance avec notre plateforme tout-en-un : pige intelligente, alertes personnalisées, CRM et surveillance concurrence en continu.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">

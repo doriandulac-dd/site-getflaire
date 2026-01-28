@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
       name: "Marie Dubois",
       role: "Agent immobilier indépendant",
       image: "/Marie.jpg",
-      content: "GetFlaire a révolutionné ma façon de travailler. Je gagne 3h par jour sur ma prospection et je signe 40% de mandats en plus !",
+      content: "GetFlaire a révolutionné ma façon de travailler. Je pilote maintenant ma prospection en 3 clics et je signe 40% de mandats en plus !",
       rating: 5
     },
     {
@@ -39,10 +39,10 @@ const TestimonialsSection = () => {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Ils nous font confiance
+            Ils développent leur activité avec GetFlaire
           </h2>
           <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            Découvrez les retours d'expérience des professionnels qui ont transformé leur prospection avec GetFlaire
+            Découvrez comment des professionnels pilotent leur prospection et accélèrent leurs résultats
           </p>
         </div>
 

@@ -5,21 +5,21 @@ const HowItWorksSection = () => {
     {
       icon: Database,
       number: "01",
-      title: "Collecte automatique des annonces",
+      title: "Visibilité complète sur votre marché",
       description: "Notre système analyse en continu les annonces immobilières selon vos critères géographiques et vos besoins spécifiques.",
       color: "from-[#FFB23F] to-[#FF8F00]"
     },
     {
       icon: BellRing,
       number: "02",
-      title: "Alertes intelligentes et scoring",
+      title: "Opportunités qualifiées en temps réel",
       description: "Recevez instantanément les opportunités les plus pertinentes avec un score de qualité et des recommandations personnalisées.",
       color: "from-[#1B263B] to-[#2A3B52]"
     },
     {
       icon: LineChart,
       number: "03",
-      title: "Suivi et gestion avec CRM",
+      title: "Pilotez vos conversions avec précision",
       description: "Organisez vos prospects, planifiez vos relances et gérez vos interactions pour maximiser vos conversions.",
       color: "from-[#FFB23F] to-[#FF8F00]"
     }
@@ -39,10 +39,10 @@ const HowItWorksSection = () => {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Prospection immobilière simplifiée en 3 étapes
+            Une prospection maîtrisée en 3 étapes
           </h2>
           <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            De la collecte automatique des annonces à la signature des mandats
+            Du flux d'annonces continu à la conversion structurée de vos opportunités
           </p>
         </div>
 
@@ -86,9 +86,9 @@ const HowItWorksSection = () => {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
             </div>
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4">Prêt à transformer votre prospection ?</h3>
+              <h3 className="text-3xl font-bold mb-4">Prêt à développer votre portefeuille ?</h3>
               <p className="text-xl mb-8 text-white/80 max-w-2xl mx-auto">
-                Rejoignez plus de 2000 professionnels qui économisent du temps et signent plus de mandats
+                Rejoignez plus de 2000 professionnels qui pilotent leur prospection et multiplient leurs mandats
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button

@@ -49,10 +49,10 @@ const FeaturesSection = () => {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Une plateforme complète pour votre prospection
+            Maîtrisez chaque étape de votre prospection
           </h2>
           <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            Tous les outils dont vous avez besoin pour automatiser votre veille immobilière et booster votre activité.
+            Une visibilité complète sur votre marché, des alertes ciblées et un suivi structuré pour développer votre portefeuille.
           </p>
         </div>
 
