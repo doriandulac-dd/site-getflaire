@@ -1,172 +1,120 @@
-import { Search, Bell, Eye, Users, Target, Calendar } from 'lucide-react';
+import AnimatedSection from "@/components/motion/AnimatedSection";
+import MotionCounter from "@/components/motion/MotionCounter";
+import { Bell, Calendar, Eye, Search, Target, Users } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
     {
       icon: Search,
       title: "Pige immobilière intelligente",
-      description: "Surveillez automatiquement les nouvelles annonces selon vos critères précis et géographiques."
+      description: "Surveillez les annonces selon vos critères, vos zones et vos priorités commerciales.",
     },
     {
       icon: Bell,
       title: "Alertes personnalisées",
-      description: "Recevez des notifications en temps réel dès qu'une nouvelle opportunité correspond à vos besoins."
+      description: "Repérez les opportunités pertinentes dès leur publication pour prendre une longueur d'avance.",
     },
     {
       icon: Eye,
       title: "Surveillance concurrence",
-      description: "Analysez les stratégies et tarifs de vos concurrents pour rester compétitif sur votre marché."
+      description: "Suivez les mouvements du marché et adaptez votre prospection avec plus de précision.",
     },
     {
       icon: Users,
       title: "Notes intégrées",
-      description: "Garde une trace claire de tes observations et échanges."
+      description: "Centralisez vos observations et les échanges utiles avant chaque relance.",
     },
     {
       icon: Calendar,
       title: "Gestion des rappels",
-      description: "Planifiez et automatisez vos relances pour ne jamais manquer une opportunité commerciale."
+      description: "Planifiez vos relances et gardez le rythme sur chaque opportunité active.",
     },
     {
       icon: Target,
       title: "Collaboration multi-utilisateurs",
-      description: "Travaillez en équipe avec des accès personnalisés et un partage d'informations fluide."
-    }
+      description: "Travaillez en équipe avec une vision claire des rôles, actions et prospects.",
+    },
+  ];
+
+  const screenshots = [
+    { image: "/1.jpg", title: "Tableau de bord", description: "Vue d'ensemble complète de votre activité et de vos performances" },
+    { image: "/2.jpg", title: "Alertes intelligentes", description: "Notifications personnalisées pour ne jamais manquer une opportunité" },
+    { image: "/3.jpg", title: "CRM intégré", description: "Gestion complète et centralisée de vos prospects et clients" },
   ];
 
   return (
-    <section id="features" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFB23F] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1B263B] rounded-full blur-3xl"></div>
-      </div>
+    <AnimatedSection id="features" className="relative overflow-hidden bg-[#F6F8FB] py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,178,63,0.18),transparent_28rem),radial-gradient(circle_at_88%_16%,rgba(27,38,59,0.08),transparent_30rem)]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
-              Fonctionnalités
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Maîtrisez chaque étape de votre prospection
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div data-animate-item className="mx-auto mb-14 max-w-3xl text-center">
+          <span className="section-eyebrow">Fonctionnalités</span>
+          <h2 className="mt-5 text-3xl font-black leading-tight text-[#1B263B] sm:text-5xl">
+            Maîtrisez chaque étape de votre prospection.
           </h2>
-          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            Une visibilité complète sur votre marché, des alertes ciblées et un suivi structuré pour développer votre portefeuille.
+          <p className="mt-5 text-lg leading-8 text-[#62738B]">
+            Une plateforme claire pour détecter, prioriser et convertir les opportunités immobilières avec méthode.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100 hover:border-[#FFB23F]/30"
-            >
-              <div className="bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] rounded-xl p-3 w-14 h-14 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                <feature.icon className="h-7 w-7 text-white" />
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} data-animate-item className="premium-card group rounded-2xl p-6 transition-transform hover:-translate-y-1">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1B263B] shadow-lg shadow-[#1B263B]/[0.15]">
+                <feature.icon className="h-6 w-6 text-[#FFB23F]" />
               </div>
-
-              <h3 className="text-xl font-bold text-[#1B263B] mb-3 group-hover:text-[#FFB23F] transition-colors">
-                {feature.title}
-              </h3>
-
-              <p className="text-[#778DA9] leading-relaxed">
-                {feature.description}
-              </p>
+              <h3 className="text-xl font-black text-[#1B263B]">{feature.title}</h3>
+              <p className="mt-3 leading-7 text-[#62738B]">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-20 bg-gradient-to-br from-[#1B263B] to-[#2A3B52] rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
+        <div data-animate-item className="mt-16 overflow-hidden rounded-[1.75rem] bg-[#101827] p-6 shadow-[0_35px_100px_rgba(27,38,59,0.22)] sm:p-10">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFB23F]">GetFlaire en chiffres</span>
+              <h3 className="mt-3 text-3xl font-black text-white">Des signaux de marché lisibles en continu.</h3>
+            </div>
+            <p className="max-w-xl text-white/[0.64]">Des indicateurs concrets pour suivre votre marché, votre rythme et vos opportunités sans multiplier les outils.</p>
           </div>
-          <div className="relative z-10">
-            <div className="text-center mb-10">
-              <h3 className="text-3xl font-bold text-white mb-3">GetFlaire en chiffres</h3>
-              <p className="text-white/70 text-lg">Des résultats concrets pour les professionnels de l'immobilier</p>
-            </div>
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
-                <div className="text-5xl font-bold text-[#FFB23F] mb-3">+2000</div>
-                <div className="text-white/80 font-medium">Professionnels actifs</div>
+
+          <div className="grid gap-4 md:grid-cols-4">
+            {[
+              { value: 2000, prefix: "+", label: "Professionnels actifs" },
+              { value: 95, suffix: "%", label: "Satisfaction client" },
+              { value: 50, suffix: "k+", label: "Annonces par jour" },
+              { value: 24, suffix: "/7", label: "Surveillance active" },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.08] p-5">
+                <div className="text-4xl font-black text-[#FFB23F]">
+                  <MotionCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                </div>
+                <div className="mt-2 text-sm font-semibold text-white/[0.72]">{stat.label}</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
-                <div className="text-5xl font-bold text-[#FFB23F] mb-3">95%</div>
-                <div className="text-white/80 font-medium">Satisfaction client</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
-                <div className="text-5xl font-bold text-[#FFB23F] mb-3">50k+</div>
-                <div className="text-white/80 font-medium">Annonces par jour</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all">
-                <div className="text-5xl font-bold text-[#FFB23F] mb-3">24/7</div>
-                <div className="text-white/80 font-medium">Surveillance active</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Screenshots Section */}
-        <div className="mt-24">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-4">
-              <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
-                Aperçu de l'interface
-              </span>
-            </div>
-            <h3 className="text-3xl font-bold text-[#1B263B] mb-4">
-              Une interface pensée pour vous
-            </h3>
-            <p className="text-lg text-[#778DA9] max-w-2xl mx-auto">
-              Découvrez une plateforme intuitive qui simplifie votre quotidien
-            </p>
+        <div className="mt-20">
+          <div data-animate-item className="mb-10 text-center">
+            <span className="section-eyebrow">Aperçu de l'interface</span>
+            <h3 className="mt-5 text-3xl font-black text-[#1B263B]">Une interface pensée pour l'action.</h3>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
-              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
-                <img
-                  src="/1.jpg"
-                  alt="Tableau de bord GetFlaire"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {screenshots.map((item) => (
+              <div key={item.title} data-animate-item className="premium-panel group overflow-hidden rounded-2xl p-4">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-[#E8EBF0]">
+                  <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <h4 className="mt-5 text-lg font-black text-[#1B263B]">{item.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-[#62738B]">{item.description}</p>
               </div>
-              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">Tableau de bord</h4>
-              <p className="text-[#778DA9] text-sm leading-relaxed">Vue d'ensemble complète de votre activité et de vos performances</p>
-            </div>
-
-            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
-              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
-                <img
-                  src="/2.jpg"
-                  alt="Système d'alertes GetFlaire"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">Alertes intelligentes</h4>
-              <p className="text-[#778DA9] text-sm leading-relaxed">Notifications personnalisées pour ne jamais manquer une opportunité</p>
-            </div>
-
-            <div className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFB23F]/30">
-              <div className="bg-gray-100 rounded-xl h-56 mb-5 overflow-hidden relative">
-                <img
-                  src="/3.jpg"
-                  alt="CRM intégré GetFlaire"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B263B]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <h4 className="text-lg font-bold text-[#1B263B] mb-2 group-hover:text-[#FFB23F] transition-colors">CRM intégré</h4>
-              <p className="text-[#778DA9] text-sm leading-relaxed">Gestion complète et centralisée de vos prospects et clients</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

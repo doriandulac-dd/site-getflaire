@@ -1,125 +1,116 @@
-import { Database, BellRing, LineChart } from 'lucide-react';
+"use client";
+
+import { useRef } from "react";
+import AnimatedSection from "@/components/motion/AnimatedSection";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { BellRing, Database, LineChart } from "lucide-react";
 
 const HowItWorksSection = () => {
+  const lineRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion || !lineRef.current) {
+        gsap.set(lineRef.current, { scaleX: 1 });
+        return;
+      }
+
+      gsap.fromTo(
+        lineRef.current,
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          transformOrigin: "left center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            end: "bottom 55%",
+            scrub: 0.6,
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
+
   const steps = [
     {
       icon: Database,
       number: "01",
       title: "Visibilité complète sur votre marché",
-      description: "Notre système analyse en continu les annonces immobilières selon vos critères géographiques et vos besoins spécifiques.",
-      color: "from-[#FFB23F] to-[#FF8F00]"
+      description: "Analyse continue des annonces selon vos zones, critères et priorités du moment.",
     },
     {
       icon: BellRing,
       number: "02",
       title: "Opportunités qualifiées en temps réel",
-      description: "Recevez instantanément les opportunités les plus pertinentes avec un score de qualité et des recommandations personnalisées.",
-      color: "from-[#1B263B] to-[#2A3B52]"
+      description: "Alertes ciblées, signaux clairs et contexte utile pour décider vite.",
     },
     {
       icon: LineChart,
       number: "03",
-      title: "Pilotez vos conversions avec précision",
-      description: "Organisez vos prospects, planifiez vos relances et gérez vos interactions pour maximiser vos conversions.",
-      color: "from-[#FFB23F] to-[#FF8F00]"
-    }
+      title: "Conversions pilotées avec précision",
+      description: "Relances, notes et suivi commercial pour transformer plus d'opportunités en mandats.",
+    },
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFB23F] rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-block mb-4">
-            <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
-              Comment ça marche
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Une prospection maîtrisée en 3 étapes
+    <AnimatedSection as="div" className="relative overflow-hidden bg-white py-24">
+      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div data-animate-item className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="section-eyebrow">Comment ça marche</span>
+          <h2 className="mt-5 text-3xl font-black leading-tight text-[#1B263B] sm:text-5xl">
+            Une prospection maîtrisée en 3 étapes.
           </h2>
-          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            Du flux d'annonces continu à la conversion structurée de vos opportunités
+          <p className="mt-5 text-lg leading-8 text-[#62738B]">
+            Du flux d'annonces continu à la conversion structurée de vos opportunités.
           </p>
         </div>
 
         <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFB23F] via-[#1B263B] to-[#FFB23F] opacity-20 transform -translate-y-1/2"></div>
+          <div className="absolute left-0 right-0 top-10 hidden h-1 rounded-full bg-[#E8EBF0] lg:block">
+            <div ref={lineRef} className="h-full rounded-full bg-gradient-to-r from-[#FFB23F] via-[#FF8F00] to-[#1B263B]" />
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 relative z-10">
-            {steps.map((step, index) => (
-              <div key={index} className="relative group">
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#FFB23F]/30 h-full">
-                  {/* Number badge */}
-                  <div className="absolute -top-4 -left-4 bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] text-white rounded-2xl w-16 h-16 flex items-center justify-center text-2xl font-bold shadow-xl">
-                    {step.number}
-                  </div>
-
-                  <div className="mb-6 mt-8">
-                    <div className={`bg-gradient-to-br ${step.color} rounded-2xl p-5 w-20 h-20 flex items-center justify-center mx-auto shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                      <step.icon className="h-10 w-10 text-white" />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.title} data-animate-item className="relative">
+                <div className="premium-panel h-full rounded-2xl p-7">
+                  <div className="mb-7 flex items-center justify-between">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1B263B] shadow-xl shadow-[#1B263B]/[0.15]">
+                      <step.icon className="h-8 w-8 text-[#FFB23F]" />
                     </div>
+                    <span className="text-5xl font-black text-[#1B263B]/[0.08]">{step.number}</span>
                   </div>
-
-                  <h3 className="text-2xl font-bold text-[#1B263B] mb-4 text-center group-hover:text-[#FFB23F] transition-colors">
-                    {step.title}
-                  </h3>
-
-                  <p className="text-[#778DA9] text-center leading-relaxed">
-                    {step.description}
-                  </p>
+                  <h3 className="text-2xl font-black text-[#1B263B]">{step.title}</h3>
+                  <p className="mt-4 leading-7 text-[#62738B]">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-20">
-          <div className="relative bg-gradient-to-br from-[#1B263B] to-[#2A3B52] rounded-3xl p-12 text-white shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4">Prêt à développer votre portefeuille ?</h3>
-              <p className="text-xl mb-8 text-white/80 max-w-2xl mx-auto">
-                Rejoignez plus de 2000 professionnels qui pilotent leur prospection et multiplient leurs mandats
+        <div data-animate-item className="mt-16 overflow-hidden rounded-[1.75rem] bg-[#1B263B] p-8 text-white shadow-[0_30px_90px_rgba(27,38,59,0.24)] sm:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <h3 className="text-3xl font-black">Prêt à développer votre portefeuille ?</h3>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/[0.72]">
+                Rejoignez les professionnels qui structurent leur prospection et multiplient leurs mandats.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('pricing');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="bg-[#FFB23F] hover:bg-[#FF8F00] text-[#1B263B] px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-[#FFB23F]/50 transform hover:scale-105"
-                >
-                  Essayer gratuitement 14 jours
-                </button>
-                <div className="flex items-center space-x-4 text-white/70 text-sm">
-                  <span className="flex items-center space-x-1">
-                    <svg className="h-4 w-4 text-[#FFB23F]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>Sans engagement</span>
-                  </span>
-                  <span className="flex items-center space-x-1">
-                    <svg className="h-4 w-4 text-[#FFB23F]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>Sans CB</span>
-                  </span>
-                </div>
-              </div>
             </div>
+            <button
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+              className="rounded-full bg-[#FFB23F] px-8 py-4 font-bold text-[#1B263B] shadow-xl shadow-[#FFB23F]/25 transition-colors hover:bg-[#FF8F00]"
+            >
+              Essayer gratuitement 14 jours
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

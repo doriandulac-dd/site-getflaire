@@ -1,3 +1,5 @@
+"use client";
+
 import { Linkedin, Instagram, Play } from 'lucide-react';
 
 const Footer = () => {
@@ -9,9 +11,9 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-[#1B263B] text-white">
+    <footer id="contact" className="bg-[#0F1722] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-12 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="mb-6">
@@ -32,21 +34,21 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4 mt-8">
               <a 
-                href="#" 
+                href="#"
                 className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5 text-[#778DA9] group-hover:text-white" />
               </a>
               <a 
-                href="#" 
+                href="#"
                 className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5 text-[#778DA9] group-hover:text-white" />
               </a>
               <a 
-                href="#" 
+                href="#"
                 className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
                 aria-label="TikTok"
               >
@@ -148,7 +150,7 @@ const Footer = () => {
         <div className="border-t border-[#778DA9]/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-[#778DA9] text-sm mb-4 md:mb-0">
-              © 2025 GetFlaire. Tous droits réservés.
+              © 2026 GetFlaire. Tous droits réservés.
             </p>
             
             <div className="flex items-center space-x-6 text-sm text-[#778DA9]">

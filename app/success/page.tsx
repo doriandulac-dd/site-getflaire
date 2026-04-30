@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,8 +10,6 @@ import { Button } from '@/components/ui/button';
 export default function Success() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get('session_id');
-  const [customerEmail, setCustomerEmail] = useState<string>('');
-
   useEffect(() => {
     // En production, vous pourriez récupérer les détails de la session
     // pour afficher des informations personnalisées
@@ -33,7 +31,7 @@ export default function Success() {
               <CheckCircle className="h-12 w-12 text-white" />
             </div>
             
-            <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
+            <h1 className="text-4xl sm:text-5xl font-black text-[#1B263B] mb-4">
               Paiement confirmé !
             </h1>
             
@@ -44,7 +42,7 @@ export default function Success() {
           </div>
 
           {/* Success Details */}
-          <div className="bg-gray-50 rounded-3xl p-8 mb-8 max-w-2xl mx-auto">
+          <div className="premium-panel rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">
               Prochaines étapes
             </h2>
@@ -86,6 +84,7 @@ export default function Success() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
+              onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
               className="bg-[#FFB23F] hover:bg-[#FF8F00] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Accéder à l'application

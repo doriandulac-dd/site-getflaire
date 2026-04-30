@@ -39,13 +39,14 @@ export default function Affiliation() {
 
           {/* Hero Section */}
           <div className="text-center mb-16">
+            <span className="section-eyebrow mb-5">Programme partenaire</span>
             <div className="bg-gradient-to-br from-[#FFB23F] to-[#FF8F00] rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
+            <h1 className="text-4xl sm:text-5xl font-black text-[#1B263B] mb-4">
               Recommandez GetFlaire, Touchez 30%. À vie.
             </h1>
-            <p className="text-xl text-[#778DA9] max-w-3xl mx-auto mb-8">
+            <p className="text-lg leading-8 text-[#62738B] max-w-3xl mx-auto mb-8">
               Chaque inscription à GetFlaire via votre lien vous rapporte jusqu’à 30% de commission récurrente. 
               Des gains sans plafond, tous les mois.
             </p>
@@ -74,7 +75,7 @@ export default function Affiliation() {
 
           {/* Key Benefits */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 text-center">
+            <div className="premium-panel rounded-2xl p-8 text-center">
               <div className="bg-green-500 rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Euro className="h-8 w-8 text-white" />
               </div>
@@ -84,7 +85,7 @@ export default function Affiliation() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center">
+            <div className="premium-panel rounded-2xl p-8 text-center">
               <div className="bg-blue-500 rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
@@ -94,7 +95,7 @@ export default function Affiliation() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 text-center">
+            <div className="premium-panel rounded-2xl p-8 text-center">
               <div className="bg-purple-500 rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Gift className="h-8 w-8 text-white" />
               </div>
@@ -106,7 +107,7 @@ export default function Affiliation() {
           </div>
 
           {/* How it works */}
-          <div className="bg-gray-50 rounded-3xl p-8 mb-16">
+          <div className="premium-panel rounded-2xl p-8 mb-16">
             <h2 className="text-3xl font-bold text-[#1B263B] text-center mb-12">
               Comment ça fonctionne ?
             </h2>

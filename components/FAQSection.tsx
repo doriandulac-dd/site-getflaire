@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import AnimatedSection from '@/components/motion/AnimatedSection';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -34,13 +35,14 @@ const FAQSection = () => {
 ];
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <AnimatedSection id="faq" className="bg-[#F6F8FB] py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1B263B] mb-4">
+        <div data-animate-item className="text-center mb-14">
+          <span className="section-eyebrow mb-5">FAQ</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-[#1B263B] mb-4">
             Questions fréquentes
           </h2>
-          <p className="text-xl text-[#778DA9]">
+          <p className="text-lg text-[#62738B]">
             Retrouvez les réponses aux questions les plus courantes sur GetFlaire
           </p>
         </div>
@@ -49,11 +51,12 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+              data-animate-item
+              className="premium-panel overflow-hidden rounded-2xl transition-transform hover:-translate-y-0.5"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors"
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-[#F6F8FB] transition-colors sm:px-8 sm:py-6"
               >
                 <h3 className="text-lg font-semibold text-[#1B263B] pr-4">
                   {faq.question}
@@ -81,7 +84,7 @@ const FAQSection = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-12">
+        <div data-animate-item className="text-center mt-12">
           <p className="text-[#778DA9] mb-4">
             Vous ne trouvez pas la réponse à votre question ?
           </p>
@@ -95,7 +98,7 @@ const FAQSection = () => {
           </button>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 
