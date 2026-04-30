@@ -1,8 +1,5 @@
-"use client";
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star } from 'lucide-react';
-import AnimatedSection from '@/components/motion/AnimatedSection';
 
 const CTASection = () => {
   const scrollToPricing = () => {
@@ -13,10 +10,9 @@ const CTASection = () => {
   };
 
   return (
-    <AnimatedSection className="relative overflow-hidden bg-[#101827] py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(255,178,63,0.28),transparent_28rem),radial-gradient(circle_at_82%_10%,rgba(119,141,169,0.18),transparent_30rem)]" />
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div data-animate-item className="mb-8">
+    <section className="py-20 bg-gradient-to-br from-[#FFB23F] via-[#FF8F00] to-[#1B263B]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mb-8">
           <div className="flex justify-center mb-6">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
@@ -25,7 +21,7 @@ const CTASection = () => {
             </div>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             Prêt à booster votre 
             <span className="block">prospection immobilière ?</span>
           </h2>
@@ -35,11 +31,11 @@ const CTASection = () => {
           </p>
         </div>
 
-        <div data-animate-item className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button 
             onClick={scrollToPricing}
             size="lg"
-            className="bg-[#FFB23F] text-[#1B263B] hover:bg-[#FF8F00] px-8 py-4 rounded-full font-bold shadow-xl shadow-[#FFB23F]/25"
+            className="bg-white text-[#1B263B] hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
           >
             Créer mon compte GetFlaire
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -48,7 +44,7 @@ const CTASection = () => {
         </div>
 
         {/* Trust indicators */}
-        <div data-animate-item className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
           <div className="flex items-center space-x-2">
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -69,7 +65,7 @@ const CTASection = () => {
           </div>
         </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 };
 

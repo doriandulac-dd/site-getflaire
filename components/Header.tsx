@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Menu, Sparkles, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -16,58 +16,58 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/70 bg-white/[0.82] shadow-[0_10px_45px_rgba(27,38,59,0.08)] backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a
+            <a 
               href="/"
-              className="flex items-center rounded-full bg-white/70 px-2 py-1 shadow-sm transition-opacity hover:opacity-85"
+              className="hover:opacity-80 transition-opacity"
             >
-              <img
-                src="/GetFlaire logo long hd 2000*500-min.png"
-                alt="Logo GetFlaire"
+              <img 
+                src="/GetFlaire logo long hd 2000*500-min.png" 
+                alt="Logo GetFlaire" 
                 className="h-8 w-auto"
               />
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center rounded-full border border-[#1B263B]/10 bg-white/70 px-4 py-2 shadow-sm">
+          <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('features')}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Fonctionnalités
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Tarifs
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               FAQ
             </button>
             <button 
               onClick={() => window.location.href = '/contact'}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Contact
             </button>
             <button 
               onClick={() => window.location.href = 'https://leblog.getflaire.fr'}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Blog
             </button>
             <button 
               onClick={() => window.location.href = '/affiliation'}
-              className="px-3 text-sm font-semibold text-[#62738B] transition-colors hover:text-[#1B263B]"
+              className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
             >
               Affiliation
             </button>
@@ -78,15 +78,14 @@ const Header = () => {
             <Button 
               variant="outline"
               onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
-              className="rounded-full border-[#1B263B]/[0.15] bg-white/60 text-[#1B263B] hover:bg-[#1B263B] hover:text-white"
+              className="border-[#778DA9] text-[#778DA9] hover:bg-[#778DA9] hover:text-white"
             >
               Connexion
             </Button>
             <Button 
               onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
-              className="rounded-full bg-[#FFB23F] text-[#1B263B] shadow-lg shadow-[#FFB23F]/25 hover:bg-[#FF8F00]"
+              className="bg-[#FFB23F] hover:bg-[#FF8F00] text-white"
             >
-              <Sparkles className="mr-2 h-4 w-4" />
               Essayer gratuitement
             </Button>
           </div>
@@ -95,7 +94,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="rounded-full border border-[#1B263B]/10 bg-white/70 p-2 text-[#1B263B] shadow-sm"
+              className="text-[#778DA9] hover:text-[#1B263B] p-2"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -105,7 +104,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="space-y-1 border-t border-[#1B263B]/10 bg-white/95 px-2 pb-3 pt-2 shadow-xl">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               <button 
                 onClick={() => scrollToSection('features')}
                 className="block w-full text-left px-3 py-2 text-[#778DA9] hover:text-[#1B263B] font-medium"
@@ -147,13 +146,13 @@ const Header = () => {
                 <Button 
                   variant="outline"
                   onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
-                  className="w-full rounded-full border-[#1B263B]/[0.15] text-[#1B263B] hover:bg-[#1B263B] hover:text-white"
+                  className="w-full border-[#778DA9] text-[#778DA9] hover:bg-[#778DA9] hover:text-white"
                 >
                   Connexion
                 </Button>
                 <Button 
                   onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
-                  className="w-full rounded-full bg-[#FFB23F] text-[#1B263B] hover:bg-[#FF8F00]"
+                  className="w-full bg-[#FFB23F] hover:bg-[#FF8F00] text-white"
                 >
                   Essayer gratuitement
                 </Button>

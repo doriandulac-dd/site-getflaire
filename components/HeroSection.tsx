@@ -1,191 +1,185 @@
-"use client";
-
-import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import MotionCounter from "@/components/motion/MotionCounter";
-import { gsap, useGSAP } from "@/lib/gsap";
-import {
-  ArrowRight,
-  BarChart3,
-  Bell,
-  Calendar,
-  CheckCircle2,
-  Gauge,
-  Shield,
-  Sparkles,
-  Target,
-  Users,
-} from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { ArrowRight, BarChart3, Bell, Users, Calendar, Target, Shield } from 'lucide-react';
 
 const HeroSection = () => {
-  const scope = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia(scope);
-
-      mm.add(
-        {
-          reduceMotion: "(prefers-reduced-motion: reduce)",
-          isDesktop: "(min-width: 1024px)",
-        },
-        ({ conditions }) => {
-          const reduceMotion = Boolean(conditions?.reduceMotion);
-
-          if (reduceMotion) {
-            gsap.set("[data-hero-animate]", { autoAlpha: 1, y: 0, scale: 1 });
-            return;
-          }
-
-          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-          tl.from("[data-hero-animate]", {
-            autoAlpha: 0,
-            y: 34,
-            duration: 0.9,
-            stagger: 0.08,
-          }).from(
-            "[data-dashboard-card]",
-            {
-              autoAlpha: 0,
-              y: 24,
-              scale: 0.96,
-              duration: 0.8,
-              stagger: 0.06,
-            },
-            "-=0.45"
-          );
-
-          if (conditions?.isDesktop) {
-            gsap.to("[data-hero-orbit]", {
-              y: -18,
-              duration: 3.2,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-            });
-          }
-        }
-      );
-
-      return () => mm.revert();
-    },
-    { scope }
-  );
+  const scrollToPricing = () => {
+    const element = document.getElementById('pricing');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section
-      ref={scope}
-      id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden bg-[#0F1722] pt-24 text-white"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(255,178,63,0.28),transparent_28rem),radial-gradient(circle_at_78%_24%,rgba(119,141,169,0.22),transparent_30rem),linear-gradient(135deg,#101827_0%,#1B263B_52%,#2D3543_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#F6F8FB] to-transparent" />
-      <div className="absolute left-8 top-28 hidden h-28 w-28 rounded-full border border-white/10 lg:block" data-hero-orbit />
-      <div className="absolute bottom-32 right-12 hidden h-44 w-44 rounded-full border border-[#FFB23F]/25 lg:block" data-hero-orbit />
+    <section id="hero" className="relative pt-16 min-h-screen flex items-center overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1B263B] via-[#2A3B52] to-[#FFB23F]/20"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#FFB23F] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#FFB23F] rounded-full blur-3xl"></div>
+      </div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-24">
-        <div>
-          <div data-hero-animate className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FFB23F]/25 bg-[#FFB23F]/10 px-4 py-2 text-sm font-semibold text-[#FFD699]">
-            <Sparkles className="h-4 w-4" />
-            La pige immobilière nouvelle génération
-          </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            <div className="inline-block mb-6">
+              <span className="bg-[#FFB23F]/20 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/30">
+                La pige immobilière nouvelle génération
+              </span>
+            </div>
 
-          <h1 data-hero-animate className="max-w-4xl text-4xl font-bold leading-[1.02] text-white sm:text-5xl lg:text-6xl">
-            Pilotez votre prospection et transformez chaque opportunité en mandat.
-          </h1>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Pilotez votre prospection,
+              <span className="block text-[#FFB23F]">transformez vos opportunités en mandats</span>
+            </h1>
 
-          <p data-hero-animate className="mt-6 max-w-2xl text-lg leading-8 text-white/[0.72]">
-            GetFlaire réunit pige intelligente, alertes, CRM et surveillance concurrence dans une interface claire pour les professionnels qui veulent agir vite.
-          </p>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Gardez une longueur d'avance avec notre plateforme tout-en-un : pige intelligente, alertes personnalisées, CRM et surveillance concurrence en continu.
+            </p>
 
-          <div data-hero-animate className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Button
-              onClick={() => window.location.href = "https://app.getflaire.fr/login"}
-              size="lg"
-              className="h-14 rounded-full bg-[#FFB23F] px-7 text-base font-bold text-[#1B263B] shadow-2xl shadow-[#FFB23F]/30 hover:bg-[#FF8F00]"
-            >
-              Essayer gratuitement
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-              size="lg"
-              variant="outline"
-              className="h-14 rounded-full border-white/25 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur hover:bg-white/10"
-            >
-              Voir les tarifs
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+              <Button
+                onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
+                size="lg"
+                className="bg-[#FFB23F] hover:bg-[#FF8F00] text-[#1B263B] px-8 py-6 text-lg rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-[#FFB23F]/50 transform hover:scale-105"
+              >
+                Essayer gratuitement
+                <ArrowRight className="ml-2 h-6 w-6" />
+              </Button>
+              <Button
+                onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
+                size="lg"
+                variant="outline"
+                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-2xl font-semibold backdrop-blur-sm transition-all duration-300"
+              >
+                Se connecter
+              </Button>
+            </div>
 
-          <div data-hero-animate className="mt-8 grid max-w-xl grid-cols-1 gap-3 text-sm text-white/[0.74] sm:grid-cols-3">
-            {["14 jours gratuits", "Sans engagement", "Hébergé en France"].map((label) => (
-              <div key={label} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-[#FFB23F]" />
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div data-hero-animate className="relative">
-          <div className="absolute -inset-6 rounded-[2rem] bg-[#FFB23F]/20 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.15] bg-white/[0.12] p-4 shadow-[0_40px_120px_rgba(0,0,0,0.35)] backdrop-blur-2xl lg:p-5">
-            <div className="rounded-[1.35rem] bg-[#F8FAFC] p-4 text-[#1B263B]">
-              <div className="mb-5 flex items-center justify-between border-b border-[#1B263B]/10 pb-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#778DA9]">Dashboard</p>
-                  <h3 className="text-xl font-bold">Vue commerciale</h3>
+            {/* Trust indicators */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-300">
+              <div className="flex items-center space-x-2">
+                <div className="bg-[#FFB23F]/20 rounded-full p-1.5 border border-[#FFB23F]/30">
+                  <svg className="h-3.5 w-3.5 text-[#FFB23F]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                 </div>
-                <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">Live</div>
+                <span className="text-sm font-medium">14 jours gratuits</span>
               </div>
-
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  { icon: BarChart3, value: 47, label: "Annonces", suffix: "" },
-                  { icon: Bell, value: 12, label: "Alertes", suffix: "" },
-                  { icon: Users, value: 8, label: "Prospects", suffix: "" },
-                ].map((item) => (
-                  <div key={item.label} data-dashboard-card className="rounded-2xl border border-[#1B263B]/[0.08] bg-white p-4 shadow-sm">
-                    <item.icon className="mb-3 h-5 w-5 text-[#FFB23F]" />
-                    <div className="text-2xl font-black">
-                      <MotionCounter value={item.value} suffix={item.suffix} />
-                    </div>
-                    <div className="mt-1 text-xs font-semibold text-[#778DA9]">{item.label}</div>
-                  </div>
-                ))}
+              <div className="flex items-center space-x-2">
+                <div className="bg-[#FFB23F]/20 rounded-full p-1.5 border border-[#FFB23F]/30">
+                  <svg className="h-3.5 w-3.5 text-[#FFB23F]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Sans engagement</span>
               </div>
-
-              <div className="mt-4 space-y-3">
-                {[
-                  { icon: Target, title: "Villa Neuilly-sur-Seine", meta: "Publié il y a 2h", badge: "Nouveau" },
-                  { icon: Calendar, title: "RDV M. Dupont", meta: "Aujourd'hui à 14h00", badge: "Confirmé" },
-                  { icon: Shield, title: "Suivi concurrence", meta: "3 agences surveillées", badge: "Actif" },
-                ].map((item) => (
-                  <div key={item.title} data-dashboard-card className="flex items-center justify-between rounded-2xl border border-[#1B263B]/[0.08] bg-white p-3 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-xl bg-[#1B263B] p-2">
-                        <item.icon className="h-4 w-4 text-[#FFB23F]" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold">{item.title}</div>
-                        <div className="text-xs text-[#778DA9]">{item.meta}</div>
-                      </div>
-                    </div>
-                    <span className="rounded-full bg-[#FFB23F]/[0.12] px-3 py-1 text-xs font-bold text-[#C46E00]">{item.badge}</span>
-                  </div>
-                ))}
+              <div className="flex items-center space-x-2">
+                <div className="bg-[#FFB23F]/20 rounded-full p-1.5 border border-[#FFB23F]/30">
+                  <svg className="h-3.5 w-3.5 text-[#FFB23F]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Hébergé en France</span>
               </div>
             </div>
           </div>
 
-          <div data-hero-animate className="mt-5 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl border border-white/[0.15] bg-white/10 p-5 backdrop-blur-xl">
-              <div className="text-3xl font-black text-[#FFB23F]">+<MotionCounter value={2000} /></div>
-              <div className="mt-1 text-sm text-white/70">Professionnels actifs</div>
+          {/* Right Column - Dashboard Mockup */}
+          <div className="relative hidden lg:block">
+            <div className="absolute -inset-4 bg-gradient-to-r from-[#FFB23F] to-[#FF8F00] rounded-3xl opacity-20 blur-2xl"></div>
+            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-white/20 transform hover:scale-105 transition-all duration-500">
+              <div className="bg-gradient-to-br from-[#1B263B] to-[#2A3B52] rounded-2xl p-5 mb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-white font-bold text-lg">Tableau de bord</h3>
+                  <div className="flex space-x-1.5">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/20 transition-all">
+                    <BarChart3 className="h-7 w-7 text-[#FFB23F] mx-auto mb-2" />
+                    <div className="text-white text-xl font-bold">47</div>
+                    <div className="text-white/70 text-xs mt-1">Nouvelles annonces</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/20 transition-all">
+                    <Bell className="h-7 w-7 text-[#FFB23F] mx-auto mb-2" />
+                    <div className="text-white text-xl font-bold">12</div>
+                    <div className="text-white/70 text-xs mt-1">Alertes actives</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:bg-white/20 transition-all">
+                    <Users className="h-7 w-7 text-[#FFB23F] mx-auto mb-2" />
+                    <div className="text-white text-xl font-bold">8</div>
+                    <div className="text-white/70 text-xs mt-1">Prospects</div>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/20 transition-all group">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-[#FFB23F] rounded-lg p-2">
+                          <Target className="h-4 w-4 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-white text-sm font-medium">Villa Neuilly-sur-Seine</div>
+                          <div className="text-white/50 text-xs">Publié il y a 2h</div>
+                        </div>
+                      </div>
+                      <span className="bg-[#FFB23F] text-white text-xs font-bold px-3 py-1 rounded-full">Nouveau</span>
+                    </div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/20 transition-all">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-green-500 rounded-lg p-2">
+                          <Calendar className="h-4 w-4 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-white text-sm font-medium">RDV M. Dupont</div>
+                          <div className="text-white/50 text-xs">Aujourd'hui à 14h00</div>
+                        </div>
+                      </div>
+                      <span className="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">Confirmé</span>
+                    </div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/20 transition-all">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-blue-500 rounded-lg p-2">
+                          <Shield className="h-4 w-4 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-white text-sm font-medium">Suivi concurrence</div>
+                          <div className="text-white/50 text-xs">3 agences surveillées</div>
+                        </div>
+                      </div>
+                      <span className="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">Actif</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center space-x-2 text-[#1B263B]/60 text-sm">
+                <Shield className="h-4 w-4" />
+                <span className="font-medium">Interface simple et sécurisée</span>
+              </div>
             </div>
-            <div className="rounded-2xl border border-white/[0.15] bg-white/10 p-5 backdrop-blur-xl">
-              <div className="text-3xl font-black text-[#FFB23F]"><MotionCounter value={50} />k+</div>
-              <div className="mt-1 text-sm text-white/70">Annonces par jour</div>
+
+            {/* Stats below dashboard */}
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-[#FFB23F] mb-1">+2000</div>
+                <div className="text-white/70 text-sm">Professionnels actifs</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-[#FFB23F] mb-1">50k+</div>
+                <div className="text-white/70 text-sm">Annonces par jour</div>
+              </div>
             </div>
           </div>
         </div>

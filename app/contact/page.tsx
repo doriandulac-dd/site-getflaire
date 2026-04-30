@@ -56,11 +56,10 @@ ${formData.message}
 
           {/* Header */}
           <div className="text-center mb-16">
-            <span className="section-eyebrow mb-5">Support</span>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#1B263B] mb-4">
+            <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
               Contactez-nous
             </h1>
-            <p className="text-lg leading-8 text-[#62738B] max-w-3xl mx-auto">
+            <p className="text-xl text-[#778DA9] max-w-3xl mx-auto">
               Notre équipe support est là pour répondre à toutes vos questions sur GetFlaire. 
               N'hésitez pas à nous contacter !
             </p>
@@ -68,7 +67,7 @@ ${formData.message}
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="premium-panel rounded-2xl p-8">
+            <div>
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-8">
                 Informations de contact
               </h2>
@@ -122,7 +121,7 @@ ${formData.message}
               </div>
 
               {/* FAQ Link */}
-              <div className="mt-8 p-6 bg-[#F6F8FB] rounded-2xl border border-[#1B263B]/[0.08]">
+              <div className="mt-8 p-6 bg-gray-50 rounded-2xl">
                 <h3 className="font-semibold text-[#1B263B] mb-3">Avant de nous contacter</h3>
                 <p className="text-[#778DA9] mb-4">
                   Consultez notre FAQ, vous y trouverez peut-être la réponse à votre question.
@@ -137,7 +136,7 @@ ${formData.message}
             </div>
 
             {/* Contact Form */}
-            <div className="premium-panel rounded-2xl p-8">
+            <div>
               <h2 className="text-2xl font-semibold text-[#1B263B] mb-8">
                 Envoyez-nous un message
               </h2>

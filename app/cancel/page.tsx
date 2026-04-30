@@ -22,7 +22,7 @@ export default function Cancel() {
               <XCircle className="h-12 w-12 text-white" />
             </div>
             
-            <h1 className="text-4xl sm:text-5xl font-black text-[#1B263B] mb-4">
+            <h1 className="text-4xl font-bold text-[#1B263B] mb-4">
               Paiement annulé
             </h1>
             
@@ -33,7 +33,7 @@ export default function Cancel() {
           </div>
 
           {/* Reasons & Solutions */}
-          <div className="premium-panel rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
+          <div className="bg-gray-50 rounded-3xl p-8 mb-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-semibold text-[#1B263B] mb-6">
               Pourquoi réessayer GetFlaire ?
             </h2>
@@ -109,7 +109,7 @@ export default function Cancel() {
                 Contacter le support
               </a>
               <a 
-                href="/#faq" 
+                href="/faq" 
                 className="border border-white/20 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-medium transition-colors text-center"
               >
                 Consulter la FAQ

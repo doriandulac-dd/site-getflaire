@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Check, Zap, Building, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AnimatedSection from '@/components/motion/AnimatedSection';
 
 const PricingSection = () => {
   const [activeTab, setActiveTab] = useState<'independent' | 'agency'>('independent');
@@ -116,27 +115,25 @@ const PricingSection = () => {
   };
 
   return (
-    <AnimatedSection id="pricing" className="relative overflow-hidden bg-white py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,178,63,0.16),transparent_28rem)]" />
+    <section id="pricing" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-animate-item className="text-center mb-14">
-          <span className="section-eyebrow mb-5">Tarifs</span>
-          <h2 className="text-3xl sm:text-5xl font-black text-[#1B263B] mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1B263B] mb-4">
             Tarifs transparents et flexibles
           </h2>
-          <p className="text-lg leading-8 text-[#62738B] max-w-3xl mx-auto">
+          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto">
             Choisissez la formule qui correspond à vos besoins. Sans engagement, résiliable à tout moment.
           </p>
         </div>
 
         {/* Tabs */}
-        <div data-animate-item className="flex justify-center mb-8">
-          <div className="premium-panel rounded-full p-2">
+        <div className="flex justify-center mb-8">
+          <div className="bg-white rounded-2xl p-2 shadow-lg">
             <button
               onClick={() => setActiveTab('independent')}
               className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                 activeTab === 'independent'
-                  ? 'bg-[#1B263B] text-white shadow-lg'
+                  ? 'bg-[#FFB23F] text-white shadow-lg'
                   : 'text-[#778DA9] hover:text-[#1B263B]'
               }`}
             >
@@ -146,7 +143,7 @@ const PricingSection = () => {
               onClick={() => setActiveTab('agency')}
               className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                 activeTab === 'agency'
-                  ? 'bg-[#1B263B] text-white shadow-lg'
+                  ? 'bg-[#FFB23F] text-white shadow-lg'
                   : 'text-[#778DA9] hover:text-[#1B263B]'
               }`}
             >
@@ -156,8 +153,8 @@ const PricingSection = () => {
         </div>
 
         {/* Billing Options */}
-        <div data-animate-item className="flex justify-center mb-12">
-          <div className="premium-panel flex flex-wrap justify-center rounded-2xl p-2 sm:rounded-full">
+        <div className="flex justify-center mb-12">
+          <div className="bg-white rounded-2xl p-2 shadow-lg">
             <button
               onClick={() => setBilling('monthly')}
               className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 text-sm ${
@@ -196,9 +193,8 @@ const PricingSection = () => {
           {currentPlans.map((plan, index) => (
             <div
               key={index}
-              data-animate-item
-              className={`premium-panel relative rounded-2xl p-6 transition-transform hover:-translate-y-1 ${
-                plan.popular ? 'ring-4 ring-[#FFB23F]/30' : ''
+              className={`relative bg-white rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300 ${
+                plan.popular ? 'ring-4 ring-[#FFB23F] ring-opacity-50' : ''
               }`}
             >
               {(() => {
@@ -237,7 +233,7 @@ const PricingSection = () => {
               )}
 
               <div className="text-center mb-6">
-                <div className={`bg-gradient-to-br ${plan.popular ? 'from-[#FFB23F] to-[#FF8F00]' : 'from-[#778DA9] to-[#1B263B]'} rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-xl`}>
+                <div className={`bg-gradient-to-br ${plan.popular ? 'from-[#FFB23F] to-[#FF8F00]' : 'from-[#778DA9] to-[#1B263B]'} rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4`}>
                   <plan.icon className="h-8 w-8 text-white" />
                 </div>
                 
@@ -251,7 +247,7 @@ const PricingSection = () => {
 
                 <div className="mb-6">
                   <div className="flex items-baseline justify-center">
-                    <span className="text-5xl font-black text-[#1B263B]">
+                    <span className="text-4xl font-bold text-[#1B263B]">
                       {amountToPay}€
                     </span>
                     <span className="text-[#778DA9] ml-1">
@@ -304,8 +300,8 @@ const PricingSection = () => {
         </div>
 
         {/* Additional Options */}
-        <div data-animate-item className="text-center mt-16">
-          <div className="premium-panel rounded-2xl p-6 max-w-lg mx-auto">
+        <div className="text-center mt-16">
+          <div className="bg-white rounded-3xl p-6 shadow-xl max-w-lg mx-auto">
             <h3 className="text-xl font-semibold text-[#1B263B] mb-4">
               Options supplémentaires
             </h3>
@@ -324,7 +320,7 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 };
 
