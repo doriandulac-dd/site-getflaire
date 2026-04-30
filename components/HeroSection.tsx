@@ -51,7 +51,7 @@ const HeroSection = () => {
                 onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-2xl font-semibold backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white bg-white text-[#1B263B] hover:bg-gray-100 hover:text-[#1B263B] px-8 py-6 text-lg rounded-2xl font-bold shadow-xl shadow-black/10 backdrop-blur-sm transition-all duration-300"
               >
                 Se connecter
               </Button>

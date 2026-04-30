@@ -34,7 +34,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('features')}
               className="text-[#778DA9] hover:text-[#1B263B] font-medium transition-colors"
@@ -74,7 +74,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
             <Button 
               variant="outline"
               onClick={() => window.location.href = 'https://app.getflaire.fr/login'}
@@ -91,7 +91,7 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-[#778DA9] hover:text-[#1B263B] p-2"
@@ -103,7 +103,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               <button 
                 onClick={() => scrollToSection('features')}
