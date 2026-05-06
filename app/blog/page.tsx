@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { BlogPostSummary, getLatestBlogPosts } from '@/lib/blog';
 import { ArrowRight, BookOpen, Calendar, Clock } from 'lucide-react';
 
-const BLOG_BASE_URL = 'https://leblog.getflaire.fr/blog';
+const BLOG_BASE_URL = 'https://blog.getflaire.fr/blog';
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('fr-FR', {

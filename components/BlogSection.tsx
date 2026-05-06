@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { BlogPostSummary, getLatestBlogPosts } from '@/lib/blog';
 
-const BLOG_BASE_URL = 'https://leblog.getflaire.fr/blog';
+const BLOG_BASE_URL = 'https://blog.getflaire.fr/blog';
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('fr-FR', {
@@ -144,7 +144,7 @@ const BlogSection = () => {
 
         <div className="text-center">
           <a
-            href="https://leblog.getflaire.fr"
+            href="https://blog.getflaire.fr"
             className="inline-flex items-center bg-[#FFB23F] hover:bg-[#FF8F00] text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-[#FFB23F]/50 transform hover:scale-105"
           >
             Voir tous les articles
