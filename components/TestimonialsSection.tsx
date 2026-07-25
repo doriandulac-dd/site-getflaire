@@ -1,138 +1,87 @@
-import { Star } from 'lucide-react';
+"use client";
+
+import { Quote, Star } from "lucide-react";
+import AnimatedSection from "@/components/motion/AnimatedSection";
+
+const testimonials = [
+  {
+    name: "Marie Dubois",
+    role: "Agent immobilier indépendant",
+    image: "/Marie.jpg",
+    content:
+      "GetFlaire a révolutionné ma façon de travailler. Je pilote maintenant ma prospection en 3 clics et je signe 40% de mandats en plus !",
+  },
+  {
+    name: "Thomas Martin",
+    role: "Directeur d’agence",
+    image: "/Thomas.jpg",
+    content:
+      "L’outil parfait pour notre équipe de 8 agents. La collaboration est fluide et les résultats sont au rendez-vous.",
+  },
+  {
+    name: "Sophie Laurent",
+    role: "Négociatrice immobilière",
+    image: "/Sophie.jpg",
+    content:
+      "Interface intuitive et alertes précises. Je recommande GetFlaire à tous mes collègues du secteur immobilier.",
+  },
+];
 
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Marie Dubois",
-      role: "Agent immobilier indépendant",
-      image: "/Marie.jpg",
-      content: "GetFlaire a révolutionné ma façon de travailler. Je pilote maintenant ma prospection en 3 clics et je signe 40% de mandats en plus !",
-      rating: 5
-    },
-    {
-      name: "Thomas Martin",
-      role: "Directeur d'agence",
-      image: "/Thomas.jpg",
-      content: "L'outil parfait pour notre équipe de 8 agents. La collaboration est fluide et les résultats sont au rendez-vous.",
-      rating: 5
-    },
-    {
-      name: "Sophie Laurent",
-      role: "Négociatrice immobilière",
-      image: "/Sophie.jpg",
-      content: "Interface intuitive et alertes précises. Je recommande GetFlaire à tous mes collègues du secteur immobilier.",
-      rating: 5
-    }
-  ];
-
   return (
-    <section className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1B263B] rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="bg-[#FFB23F]/10 text-[#FFB23F] px-4 py-2 rounded-full text-sm font-semibold border border-[#FFB23F]/20">
-              Témoignages
-            </span>
+    <AnimatedSection
+      className="overflow-hidden bg-white py-24 lg:py-32"
+      staggerSelector="[data-testimonial]"
+    >
+      <div className="site-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <div>
+            <p className="section-kicker">Sur le terrain</p>
+            <h2 className="section-title mt-5">Ils ont pris de l’avance.</h2>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-            Ils développent leur activité avec GetFlaire
-          </h2>
-          <p className="text-xl text-[#778DA9] max-w-3xl mx-auto leading-relaxed">
-            Découvrez comment des professionnels pilotent leur prospection et accélèrent leurs résultats
-          </p>
+          <div className="flex flex-col gap-5 lg:items-end">
+            <div className="flex gap-1 text-[#FFB23F]" aria-label="5 étoiles sur 5">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <Star key={index} className="h-5 w-5 fill-current" />
+              ))}
+            </div>
+            <p className="section-copy max-w-xl lg:text-right">
+              Plus de 2000 professionnels utilisent GetFlaire pour piloter leur prospection et accélérer leurs résultats.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="mt-16 grid border-y border-[#DDE4EA] lg:grid-cols-[1.18fr_0.91fr_0.91fr]">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-[#FFB23F]/30 relative group"
+            <blockquote
+              key={testimonial.name}
+              data-testimonial
+              className={`group relative flex min-h-[25rem] flex-col justify-between p-7 transition-colors hover:bg-[#F7F9FA] sm:p-10 ${
+                index > 0 ? "border-t border-[#DDE4EA] lg:border-l lg:border-t-0" : ""
+              } ${index === 0 ? "bg-[#101722] text-white hover:bg-[#151F2F]" : "text-[#101722]"}`}
             >
-              {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                <svg className="w-12 h-12 text-[#FFB23F]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
-
-              {/* Rating Stars */}
-              <div className="flex items-center mb-5">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-[#FFB23F] fill-current" />
-                ))}
-              </div>
-
-              {/* Testimonial Content */}
-              <blockquote className="text-[#778DA9] mb-6 text-base leading-relaxed relative z-10">
-                {testimonial.content}
-              </blockquote>
-
-              {/* Author Info */}
-              <div className="flex items-center pt-4 border-t border-gray-100">
+              <Quote className={`h-9 w-9 ${index === 0 ? "text-[#FFB23F]" : "text-[#D4DDE4]"}`} />
+              <p className={`my-10 font-bold leading-relaxed ${index === 0 ? "text-2xl sm:text-3xl" : "text-xl"}`}>
+                “{testimonial.content}”
+              </p>
+              <footer className="flex items-center gap-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-14 h-14 rounded-full object-cover mr-4 ring-2 ring-[#FFB23F]/20"
+                  className="h-12 w-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-bold text-[#1B263B]">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-[#778DA9]">
+                  <cite className="not-italic text-sm font-extrabold">{testimonial.name}</cite>
+                  <p className={`mt-1 text-xs font-semibold ${index === 0 ? "text-white/45" : "text-[#778DA9]"}`}>
                     {testimonial.role}
-                  </div>
+                  </p>
                 </div>
-              </div>
-            </div>
+              </footer>
+            </blockquote>
           ))}
         </div>
-
-        {/* Trust indicators */}
-        <div className="mt-20">
-          <div className="relative bg-gradient-to-br from-[#1B263B] to-[#2A3B52] rounded-3xl p-12 text-white shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB23F] rounded-full blur-3xl"></div>
-            </div>
-            <div className="relative z-10 text-center">
-              <h3 className="text-3xl font-bold mb-3">Rejoignez plus de 2000 professionnels</h3>
-              <p className="text-xl mb-8 text-white/80 max-w-3xl mx-auto">
-                Agents immobiliers, négociateurs et directeurs d'agence utilisent GetFlaire chaque jour pour optimiser leur prospection
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-[#FFB23F] rounded-full p-2">
-                    <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Essai gratuit 14 jours</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="bg-[#FFB23F] rounded-full p-2">
-                    <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Sans engagement</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="bg-[#FFB23F] rounded-full p-2">
-                    <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Support français</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

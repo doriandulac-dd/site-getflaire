@@ -1,71 +1,45 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Star } from 'lucide-react';
+"use client";
+
+import { ArrowRight, Check, Sparkles } from "lucide-react";
+import AnimatedSection from "@/components/motion/AnimatedSection";
 
 const CTASection = () => {
-  const scrollToPricing = () => {
-    const element = document.getElementById('pricing');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-br from-[#FFB23F] via-[#FF8F00] to-[#1B263B]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-8">
-          <div className="flex justify-center mb-6">
-            <div className="flex items-center space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 text-yellow-300 fill-current" />
+    <AnimatedSection
+      className="relative overflow-hidden bg-[#FFB23F] py-20 text-[#101722] lg:py-28"
+      staggerSelector="[data-cta]"
+    >
+      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(16,23,34,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(16,23,34,.2)_1px,transparent_1px)] [background-size:56px_56px]" />
+      <div className="site-shell relative z-10">
+        <div data-cta className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.13em]">
+          <Sparkles className="h-4 w-4" />
+          Prenez une longueur d’avance
+        </div>
+        <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <h2 data-cta className="max-w-5xl text-[clamp(2.7rem,6.5vw,6.5rem)] font-black leading-[0.9]">
+              Votre prochaine opportunité est déjà sur le marché.
+            </h2>
+            <div data-cta className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+              {["14 jours gratuits", "Sans engagement", "Support français"].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <Check className="h-4 w-4" />
+                  {item}
+                </span>
               ))}
             </div>
           </div>
-          
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Prêt à booster votre 
-            <span className="block">prospection immobilière ?</span>
-          </h2>
-          
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Rejoignez plus de 2000 professionnels qui utilisent déjà GetFlaire pour automatiser leur veille immobilière et signer plus de mandats.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-          <Button 
-            onClick={scrollToPricing}
-            size="lg"
-            className="bg-white text-[#1B263B] hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          <a
+            data-cta
+            href="https://app.getflaire.fr/login"
+            className="button-lift inline-flex h-16 items-center justify-center gap-3 self-start rounded-md bg-[#101722] px-8 text-sm font-extrabold text-white shadow-[0_20px_50px_rgba(16,23,34,0.25)] hover:bg-[#1B263B] lg:self-auto"
           >
-            Créer mon compte GetFlaire
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          
-        </div>
-
-        {/* Trust indicators */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
-          <div className="flex items-center space-x-2">
-            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span>14 jours d'essai gratuit</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span>Sans engagement</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span>Support français</span>
-          </div>
+            Créer mon compte
+            <ArrowRight className="h-5 w-5" />
+          </a>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

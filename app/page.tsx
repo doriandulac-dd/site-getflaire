@@ -1,9 +1,7 @@
-"use client";
-
-import { useState } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/components/FeaturesSection';
+import ProofStrip from '@/components/ProofStrip';
+import ProductStorySection from '@/components/ProductStorySection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import PricingSection from '@/components/PricingSection';
@@ -17,7 +15,8 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <HeroSection />
-      <FeaturesSection />
+      <ProofStrip />
+      <ProductStorySection />
       <HowItWorksSection />
       <TestimonialsSection />
       <PricingSection />

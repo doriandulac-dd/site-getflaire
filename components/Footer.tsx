@@ -1,164 +1,68 @@
-import { Linkedin, Instagram, Play } from 'lucide-react';
+const quickLinks = [
+  { label: "Fonctionnalités", href: "/#product" },
+  { label: "Tarifs", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Blog", href: "https://blog.getflaire.fr" },
+  { label: "Contact", href: "/contact" },
+  { label: "Affiliation", href: "/affiliation" },
+];
+
+const legalLinks = [
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "CGU", href: "/cgu" },
+  { label: "Confidentialité", href: "/politique-confidentialite" },
+  { label: "Conditions", href: "/conditions" },
+  { label: "Remboursements", href: "/remboursements" },
+  { label: "Annulation", href: "/annulation" },
+  { label: "RGPD", href: "/rgpd" },
+];
 
 const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <footer id="contact" className="bg-[#1B263B] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Logo & Description */}
-          <div className="md:col-span-2">
-            <div className="mb-6">
-              <img 
-                src="/GetFlaire logo long hd 2000*500-min.png" 
-                alt="Logo GetFlaire" 
-                className="h-12 w-auto"
-              />
-              <p className="text-[#778DA9] mt-2 text-lg">
-                La pige immobilière nouvelle génération
-              </p>
-            </div>
-            
-            <p className="text-[#778DA9] leading-relaxed max-w-md">
-              GetFlaire révolutionne la prospection immobilière en automatisant la veille du marché et en centralisant tous vos outils dans une seule plateforme intuitive.
+    <footer className="bg-[#101722] text-white">
+      <div className="site-shell py-16 lg:py-20">
+        <div className="grid gap-12 border-b border-white/10 pb-14 lg:grid-cols-[1.3fr_0.7fr_0.7fr]">
+          <div>
+            <img
+              src="/GetFlaire logo long hd 2000*500-min.png"
+              alt="GetFlaire"
+              className="h-10 w-auto"
+            />
+            <p className="mt-6 max-w-md text-base leading-7 text-white/45">
+              La pige immobilière nouvelle génération pour détecter, suivre et convertir davantage d’opportunités.
             </p>
-
-            {/* Social Links */}
-            <div className="flex space-x-4 mt-8">
-              <a 
-                href="#" 
-                className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5 text-[#778DA9] group-hover:text-white" />
-              </a>
-              <a 
-                href="#" 
-                className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5 text-[#778DA9] group-hover:text-white" />
-              </a>
-              <a 
-                href="#" 
-                className="bg-[#778DA9]/20 hover:bg-[#FFB23F] p-3 rounded-xl transition-colors duration-200 group"
-                aria-label="TikTok"
-              >
-                <Play className="h-5 w-5 text-[#778DA9] group-hover:text-white" />
-              </a>
-            </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Liens rapides</h4>
-            <ul className="space-y-4">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('features')}
-                  className="text-[#778DA9] hover:text-[#FFB23F] transition-colors"
-                >
-                  Fonctionnalités
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('pricing')}
-                  className="text-[#778DA9] hover:text-[#FFB23F] transition-colors"
-                >
-                  Tarifs
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('faq')}
-                  className="text-[#778DA9] hover:text-[#FFB23F] transition-colors"
-                >
-                  FAQ
-                </button>
-              </li>
-              <li>
-                <a href="https://blog.getflaire.fr" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Blog
-                </a>
-              </li>
+            <h3 className="text-xs font-extrabold uppercase tracking-[0.13em] text-white/35">GetFlaire</h3>
+            <ul className="mt-5 space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm font-bold text-white/65 transition-colors hover:text-[#FFB23F]">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal & Support */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Support & Légal</h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="/mentions-legales" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Mentions légales
-                </a>
-              </li>
-              <li>
-                <a href="/cgu" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  CGU
-                </a>
-              </li>
-              <li>
-                <a href="/politique-confidentialite" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Politique de confidentialité
-                </a>
-              </li>
-              <li>
-                <a href="/conditions" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Conditions
-                </a>
-              </li>
-              <li>
-                <a href="/remboursements" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Remboursements
-                </a>
-              </li>
-              <li>
-                <a href="/annulation" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Annulation
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/rgpd" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  RGPD
-                </a>
-              </li>
-              <li>
-                <a href="/affiliation" className="text-[#778DA9] hover:text-[#FFB23F] transition-colors">
-                  Affiliation
-                </a>
-              </li>
+            <h3 className="text-xs font-extrabold uppercase tracking-[0.13em] text-white/35">Informations</h3>
+            <ul className="mt-5 space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm font-bold text-white/65 transition-colors hover:text-[#FFB23F]">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-[#778DA9]/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-[#778DA9] text-sm mb-4 md:mb-0">
-              © 2025 GetFlaire. Tous droits réservés.
-            </p>
-            
-            <div className="flex items-center space-x-6 text-sm text-[#778DA9]">
-              <span>🇫🇷 Fait avec ❤️ en France</span>
-              <span>•</span>
-              <span>Hébergé par OVH</span>
-              <span>•</span>
-              <span>Données sécurisées</span>
-            </div>
-          </div>
+        <div className="flex flex-col gap-4 pt-7 text-xs font-semibold text-white/35 sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 GetFlaire. Tous droits réservés.</p>
+          <p>Hébergé en France · Données sécurisées</p>
         </div>
       </div>
     </footer>
